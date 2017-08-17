@@ -1,6 +1,6 @@
-at\flying\domain\Person.class
-at\flying\test\TestImgCompress.class
-at\flying\test\TestMybatis.class
-at\flying\domain\User.class
-at\flying\test\TestBeanToMap.class
-at\flying\domain\Pet.class
+com\github\flyinghe\test\TestMybatis.class
+com\github\flyinghe\test\TestImgCompress.class
+com\github\flyinghe\domain\Pet.class
+com\github\flyinghe\domain\Person.class
+com\github\flyinghe\test\TestBeanToMap.class
+com\github\flyinghe\domain\User.class

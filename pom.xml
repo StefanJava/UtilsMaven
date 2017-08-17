@@ -8,7 +8,11 @@
     <artifactId>common-utils</artifactId>
     <version>1.0.0-RELEASE</version>
     <packaging>jar</packaging>
-
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
     <build>
         <plugins>
             <plugin>
@@ -43,6 +47,19 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
                 <version>2.5.1</version>
             </plugin>
@@ -59,6 +76,20 @@
                     <skipTests>true</skipTests>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
 
         <finalName>common-utils</finalName>
@@ -69,11 +100,24 @@
     <developers>
         <developer>
             <name>FlyingHe</name>
+            <email>h_kx1994@163.com</email>
             <roles>
                 <role>Programmer</role>
             </roles>
         </developer>
     </developers>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <scm>
+        <tag>master</tag>
+        <url>git@github.com:FlyingHe/UtilsMaven.git</url>
+        <connection>scm:git:git@github.com:FlyingHe/UtilsMaven.git</connection>
+        <developerConnection>scm:git:git@github.com:FlyingHe/UtilsMaven.git</developerConnection>
+    </scm>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
