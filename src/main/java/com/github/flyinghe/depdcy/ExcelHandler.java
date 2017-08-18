@@ -23,9 +23,9 @@ public interface ExcelHandler {
      * @param titles              标题,即第0行数据，0-based
      * @param columns             列名,即第1行数据，0-based
      * @param datas               datas被清空前调用此函数时的数据行数据，
-     *                            在limit>0的情况下datas.size()一般等于limit
+     *                            在limit &gt;0的情况下datas.size()一般等于limit
      *                            (在datas未达到指定限制而文件数据已经完全读取完毕的情况下datas.size()会小于limit),
-     *                            注意：若没有设置limit(即limit<=0的情况下)，不会调用回调函数，
+     *                            注意：若没有设置limit(即limit &lt;=0的情况下)，不会调用回调函数，
      *                            此时你应该使用类似于{@link XLSXReader#readExcelToMapList(File)}等等
      *                            不需要提供回调函数的静态函数来做处理
      * @see XLSReader#readExcelToMapList(File)

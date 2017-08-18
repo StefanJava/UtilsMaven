@@ -96,7 +96,7 @@ public class ImgUtils {
      * @param srcFile 源图片地址
      * @param desFile 目标图片地址，包括图片名称
      * @param base    指定压缩后图片的宽或者高
-     * @param wh      此参数用于指定{@param base}是宽还是高，该参数应由{@link ImgUtils}里的
+     * @param wh      此参数用于指定base参数是宽还是高，该参数应由{@link ImgUtils}里的
      *                静态常量指定
      * @param quality 指定压缩质量，范围[0.0,1.0],如果指定为null则按照默认值
      */

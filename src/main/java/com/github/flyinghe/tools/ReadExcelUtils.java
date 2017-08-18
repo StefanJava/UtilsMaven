@@ -93,11 +93,11 @@ public class ReadExcelUtils {
      * @throws Exception
      */
     public static List<Map<String, Object>> handleSheetToMapList(Sheet sheet) throws Exception {
-        List<Map<String, Object>> listMap = new ArrayList<>();
+        List<Map<String, Object>> listMap = new ArrayList<Map<String, Object>>();
         // 得到Sheet里的列名
         List<String> columnList = ReadExcelUtils.getColumnOfSheet(sheet);
         for (int i = 2; i < sheet.getLastRowNum() + 1; i++) {
-            Map<String, Object> beanMap = new HashMap<>();
+            Map<String, Object> beanMap = new HashMap<String, Object>();
             // 得到行
             Row row = sheet.getRow(i);
             // 遍历列
@@ -131,7 +131,7 @@ public class ReadExcelUtils {
      * @throws Exception
      */
     public static List<Map<String, Object>> handleWorkBookToMapList(Workbook workbook) throws Exception {
-        List<Map<String, Object>> listMap = new ArrayList<>();
+        List<Map<String, Object>> listMap = new ArrayList<Map<String, Object>>();
         // 遍历WorkBook所有Sheet
         for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
             // 获取Sheet
@@ -169,7 +169,7 @@ public class ReadExcelUtils {
      */
     public static <T> List<T> handleWorkBookToBeans(Class<T> clazz, Workbook workbook) throws Exception {
         List<Map<String, Object>> listMap = ReadExcelUtils.handleWorkBookToMapList(workbook);
-        List<T> beans = new ArrayList<>();
+        List<T> beans = new ArrayList<T>();
         for (Map<String, Object> map : listMap) {
             T bean = CommonUtils.toBean(map, clazz);
             if (bean != null) {

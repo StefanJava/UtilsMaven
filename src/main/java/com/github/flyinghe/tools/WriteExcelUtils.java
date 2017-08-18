@@ -186,7 +186,6 @@ public class WriteExcelUtils {
      * @param properties 指定写入的bean的属性
      * @param titles     指定写入的标题
      * @param dateFormat 日期格式
-     * @return 返回传入的WorkBook
      * @throws Exception
      */
     public static <T> void writeWorkBook(File file, int excelType, List<T> beans, List<String> properties,
@@ -218,7 +217,6 @@ public class WriteExcelUtils {
      * @param excelType  输出Excel文件类型{@link #XLSX}或者{@link #XLS},此类型必须与file文件名后缀匹配
      * @param beans      指定写入的Beans
      * @param dateFormat 日期格式
-     * @return 返回传入的WorkBook
      * @throws Exception
      */
     public static <T> void writeWorkBook(File file, int excelType, List<T> beans, String dateFormat) throws Exception {
@@ -229,7 +227,7 @@ public class WriteExcelUtils {
         if (map == null) {
             throw new Exception("获取bean属性失败");
         }
-        List<String> properties = new ArrayList<>();
+        List<String> properties = new ArrayList<String>();
         properties.addAll(map.keySet());
         WriteExcelUtils.writeWorkBook(file, excelType, beans, properties, properties, dateFormat);
     }
@@ -241,7 +239,6 @@ public class WriteExcelUtils {
      * @param file      指定Excel输出文件
      * @param excelType 输出Excel文件类型{@link #XLSX}或者{@link #XLS},此类型必须与file文件名后缀匹配
      * @param beans     指定写入的Beans
-     * @return 返回传入的WorkBook
      * @throws Exception
      */
     public static <T> void writeWorkBook(File file, int excelType, List<T> beans) throws Exception {
@@ -264,7 +261,7 @@ public class WriteExcelUtils {
         if (map == null) {
             return workbook;
         }
-        List<String> properties = new ArrayList<>();
+        List<String> properties = new ArrayList<String>();
         properties.addAll(map.keySet());
         return WriteExcelUtils.writeWorkBook(workbook, beans, properties, properties, dateFormat);
     }

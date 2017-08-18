@@ -55,11 +55,11 @@ public class XLSXReader implements SheetContentsHandler {
     //记录整个Excel文档的sheet数
     private int allSheetInExcel = 0;
     //记录标题,即第0行，0-based
-    private List<String> titles = new ArrayList<>();
+    private List<String> titles = new ArrayList<String>();
     //记录列名,即第1行，0-based
-    private List<String> columns = new ArrayList<>();
+    private List<String> columns = new ArrayList<String>();
     //记录每一个数据行(即不包括所有sheet的第0行和第一行等标题行以及所有空行,0-based)
-    private List<Map<String, Object>> datas = new ArrayList<>();
+    private List<Map<String, Object>> datas = new ArrayList<Map<String, Object>>();
     //指定最多读取多少数据行，即datas里最多含有多少元素，<= 0表示不限制,若指定了limit则在达到限制后会清空datas再放入新的元素
     private int limit = -1;
     //在datas达到limit限制后执行的回调函数
@@ -76,7 +76,7 @@ public class XLSXReader implements SheetContentsHandler {
 
     /**
      * @param p     The XLSX package to process
-     * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者<=0表示不四舍五入
+     * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
      */
     public XLSXReader(OPCPackage p, Integer scale) {
         this(p, scale, -1, null);
@@ -84,11 +84,11 @@ public class XLSXReader implements SheetContentsHandler {
 
     /**
      * @param p        The XLSX package to process
-     * @param limit    指定{@link #datas}最多含有多少元素,<=0表示不限制
+     * @param limit    指定{@link #datas}最多含有多少元素,&lt;=0表示不限制
      * @param callback 指定{@link #datas}达到{@link #limit}限制时执行的回调函数,
      *                 若为null则表示不执行回调函数。
      *                 注意：在{@link #datas}未达到指定限制而文件数据已经完全读取完毕的情况下也会调用回调函数(若有回调函数),
-     *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} >0)。
+     *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} &gt;0)。
      */
     public XLSXReader(OPCPackage p, int limit, ExcelHandler callback) {
         this(p, null, limit, callback);
@@ -96,12 +96,12 @@ public class XLSXReader implements SheetContentsHandler {
 
     /**
      * @param p        The XLSX package to process
-     * @param scale    指定若数值中含有小数则保留几位小数，四舍五入,null或者<=0表示不四舍五入
-     * @param limit    指定{@link #datas}最多含有多少元素,<=0表示不限制
+     * @param scale    指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
+     * @param limit    指定{@link #datas}最多含有多少元素,&lt;=0表示不限制
      * @param callback 指定{@link #datas}达到{@link #limit}限制时执行的回调函数,
      *                 若为null则表示不执行回调函数。
      *                 注意：在{@link #datas}未达到指定限制而文件数据已经完全读取完毕的情况下也会调用回调函数(若有回调函数),
-     *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} >0)。
+     *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} &gt;0)。
      */
     public XLSXReader(OPCPackage p, Integer scale, int limit, ExcelHandler callback) {
         this.xlsxPackage = p;
@@ -376,7 +376,7 @@ public class XLSXReader implements SheetContentsHandler {
      * 读取整个Excel文件,并把读取的数据放入beanMap中,全部返回
      *
      * @param file  Excel文件
-     * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者<=0表示不四舍五入
+     * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
      * @return 返回所有封装好的beanMap数据
      * @throws Exception
      */
@@ -400,14 +400,14 @@ public class XLSXReader implements SheetContentsHandler {
      * 读取整个Excel文件,并把读取的数据放入Class的实例中,全部返回
      *
      * @param file  Excel文件
-     * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者<=0表示不四舍五入
+     * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
      * @param clazz 指定封装类型
      * @return 返回所有封装好的javabean数据, 没有则返回空List
      * @throws Exception
      */
     public static <T> List<T> readExcelToBeans(File file, Integer scale, Class<T> clazz) throws Exception {
         List<Map<String, Object>> mapList = XLSXReader.readExcelToMapList(file, scale);
-        List<T> beans = new ArrayList<>();
+        List<T> beans = new ArrayList<T>();
         for (Map<String, Object> map : mapList) {
             T bean = CommonUtils.toBean(map, clazz);
             if (bean != null) {
@@ -434,7 +434,7 @@ public class XLSXReader implements SheetContentsHandler {
      * 可以通过返回的{@link XLSXReader}对象调用{@link XLSXReader#getDatas()}方法拿到数据
      *
      * @param file  Excel文件
-     * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者<=0表示不四舍五入
+     * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
      * @return 返回 {@link XLSXReader}对象，你可以通过此对象获取你需要的数据
      * @throws Exception
      */
@@ -459,11 +459,11 @@ public class XLSXReader implements SheetContentsHandler {
      * 用于读取limit行之后处理读取的数据(通过回调函数处理)
      *
      * @param file     Excel文件
-     * @param limit    指定最多读取多少数据行，<= 0表示不限制,若指定了limit则在达到限制后会移除旧元素再放入新的元素
+     * @param limit    指定最多读取多少数据行，&lt;= 0表示不限制,若指定了limit则在达到限制后会移除旧元素再放入新的元素
      * @param callback 指定{@link #datas}达到{@link #limit}限制时执行的回调函数,
      *                 若为null则表示不执行回调函数。
      *                 注意：在{@link #datas}未达到指定限制而文件数据已经完全读取完毕的情况下也会调用回调函数(若有回调函数),
-     *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} >0)。
+     *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} &gt;0)。
      * @throws Exception
      */
     public static void readExcel(File file, int limit, ExcelHandler callback)
@@ -475,12 +475,12 @@ public class XLSXReader implements SheetContentsHandler {
      * 用于读取limit行之后处理读取的数据(通过回调函数处理)
      *
      * @param file     Excel文件
-     * @param scale    指定若数值中含有小数则保留几位小数，四舍五入,null或者<=0表示不四舍五入
-     * @param limit    指定最多读取多少数据行，<= 0表示不限制,若指定了limit则在达到限制后会移除旧元素再放入新的元素
+     * @param scale    指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
+     * @param limit    指定最多读取多少数据行，&lt;= 0表示不限制,若指定了limit则在达到限制后会移除旧元素再放入新的元素
      * @param callback 指定{@link #datas}达到{@link #limit}限制时执行的回调函数,
      *                 若为null则表示不执行回调函数。
      *                 注意：在{@link #datas}未达到指定限制而文件数据已经完全读取完毕的情况下也会调用回调函数(若有回调函数),
-     *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} >0)。
+     *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} &gt;0)。
      * @throws Exception
      */
     public static void readExcel(File file, Integer scale, int limit, ExcelHandler callback)
