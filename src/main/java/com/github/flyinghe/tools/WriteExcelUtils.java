@@ -1,5 +1,6 @@
 package com.github.flyinghe.tools;
 
+import org.apache.commons.lang.time.DateUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -9,14 +10,16 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * 本类用于将JavaBean写入Excel文档中，采用POI(3.14及以上版本)技术，使用时需导入相关Jar包。
  * Created by Flying on 2016/5/28.
+ * <p>
+ * 本类用于将JavaBean写入Excel文档中，采用POI(3.14及以上版本)技术，使用时需导入相关Jar包。
+ * </p>
  */
 public class WriteExcelUtils {
     public final static int XLSX = 1;
     public final static int XLS = 2;
     //默认日期格式
-    private static SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    private static final String DATE_PATTERN = "yyyy/MM/dd HH:mm:ss";
 
     private WriteExcelUtils() {}
 
@@ -29,9 +32,8 @@ public class WriteExcelUtils {
      * @return 返回传入的Cell
      */
     public static Cell setCellValue(Cell cell, Object value, String dateFormat) {
-        if (dateFormat != null && !dateFormat.isEmpty()) {
-            format.applyPattern(dateFormat);
-        }
+        SimpleDateFormat format =
+                new SimpleDateFormat(dateFormat != null && !dateFormat.isEmpty() ? dateFormat : DATE_PATTERN);
         if (value == null) {
             cell.setCellValue("");
         } else if (value instanceof String) {
@@ -48,6 +50,10 @@ public class WriteExcelUtils {
             cell.setCellValue((Float) value);
         } else if (value instanceof Double) {
             cell.setCellValue((Double) value);
+        } else if (value instanceof Byte) {
+            cell.setCellValue((Byte) value);
+        } else if (value instanceof Short) {
+            cell.setCellValue((Short) value);
         } else {
             cell.setCellValue(value.toString());
         }
@@ -67,7 +73,12 @@ public class WriteExcelUtils {
      */
     public static <T> Row writePerRow(Row row, T bean, List<String> properties, String dateFormat,
                                       CellStyle cellStyle) {
-        Map<String, Object> mapBean = CommonUtils.toMap(bean);
+        Map<String, Object> mapBean = null;
+        if (bean instanceof Map) {
+            mapBean = (Map<String, Object>) bean;
+        } else {
+            mapBean = CommonUtils.toMap(bean);
+        }
         if (mapBean == null) {
             return row;
         }
@@ -89,7 +100,7 @@ public class WriteExcelUtils {
      * @param _titleRow  指定写入的标题在第几行，0-based
      * @param begin      指定写入的Bean从第几个开始，包含该下标,0-based
      * @param end        指定写入的Bean从第几个结束，不包含该下标，0-based
-     * @param beans      指定写入的Beans
+     * @param beans      指定写入的Beans(或者泛型为Map)
      * @param properties 指定写入的bean的属性
      * @param titles     指定写入的标题
      * @param dateFormat 日期格式
@@ -129,7 +140,7 @@ public class WriteExcelUtils {
      * @param workbook   指定工作簿
      * @param _titleRow  指定写入的标题在第几行，0-based
      * @param count      指定每个Sheet写入几个bean
-     * @param beans      指定写入的Beans
+     * @param beans      指定写入的Beans(或者泛型为Map)
      * @param properties 指定写入的bean的属性
      * @param titles     指定写入的标题
      * @param dateFormat 日期格式
@@ -151,7 +162,7 @@ public class WriteExcelUtils {
      *
      * @param workbook   指定工作簿
      * @param count      指定每一个Sheet写入几个Bean
-     * @param beans      指定写入的Beans
+     * @param beans      指定写入的Beans(或者泛型为Map)
      * @param properties 指定写入的bean的属性
      * @param titles     指定写入的标题
      * @param dateFormat 日期格式
@@ -166,7 +177,7 @@ public class WriteExcelUtils {
      * 向工作簿中写入beans，所有bean写在一个Sheet中,标题写在第0行,0-based
      *
      * @param workbook   指定工作簿
-     * @param beans      指定写入的Beans
+     * @param beans      指定写入的Beans(或者泛型为Map)
      * @param properties 指定写入的bean的属性
      * @param titles     指定写入的标题
      * @param dateFormat 日期格式
@@ -182,7 +193,7 @@ public class WriteExcelUtils {
      *
      * @param file       指定Excel输出文件
      * @param excelType  输出Excel文件类型{@link #XLSX}或者{@link #XLS},此类型必须与file文件名后缀匹配
-     * @param beans      指定写入的Beans
+     * @param beans      指定写入的Beans(或者泛型为Map)
      * @param properties 指定写入的bean的属性
      * @param titles     指定写入的标题
      * @param dateFormat 日期格式
@@ -215,7 +226,7 @@ public class WriteExcelUtils {
      *
      * @param file       指定Excel输出文件
      * @param excelType  输出Excel文件类型{@link #XLSX}或者{@link #XLS},此类型必须与file文件名后缀匹配
-     * @param beans      指定写入的Beans
+     * @param beans      指定写入的Beans(或者泛型为Map)
      * @param dateFormat 日期格式
      * @throws Exception
      */
@@ -223,7 +234,12 @@ public class WriteExcelUtils {
         if (beans == null || beans.isEmpty()) {
             throw new Exception("beans参数不能为空");
         }
-        Map<String, Object> map = CommonUtils.toMap(beans.get(0));
+        Map<String, Object> map = null;
+        if (beans.get(0) instanceof Map) {
+            map = (Map<String, Object>) beans.get(0);
+        } else {
+            map = CommonUtils.toMap(beans.get(0));
+        }
         if (map == null) {
             throw new Exception("获取bean属性失败");
         }
@@ -238,7 +254,7 @@ public class WriteExcelUtils {
      *
      * @param file      指定Excel输出文件
      * @param excelType 输出Excel文件类型{@link #XLSX}或者{@link #XLS},此类型必须与file文件名后缀匹配
-     * @param beans     指定写入的Beans
+     * @param beans     指定写入的Beans(或者泛型为Map)
      * @throws Exception
      */
     public static <T> void writeWorkBook(File file, int excelType, List<T> beans) throws Exception {
@@ -246,10 +262,56 @@ public class WriteExcelUtils {
     }
 
     /**
+     * 向工作簿中写入beans，所有bean写在一个Sheet中,默认以bean中的所有属性作为标题且写入第0行，0-based。
+     * 日期格式采用默认类型。并输出到指定file中
+     *
+     * @param file      指定Excel输出文件
+     * @param excelType 输出Excel文件类型{@link #XLSX}或者{@link #XLS},此类型必须与file文件名后缀匹配
+     * @param beans     指定写入的Beans(或者泛型为Map)
+     * @param count     指定每一个Sheet写入几个Bean
+     * @throws Exception
+     */
+    public static <T> void writeWorkBook(File file, int excelType, List<T> beans, int count) throws Exception {
+        Workbook workbook = null;
+        if (XLSX == excelType) {
+            workbook = new XSSFWorkbook();
+        } else if (XLS == excelType) {
+            workbook = new HSSFWorkbook();
+        } else {
+            throw new Exception("excelType参数错误");
+        }
+
+        if (beans == null || beans.isEmpty()) {
+            throw new Exception("beans参数不能为空");
+        }
+        Map<String, Object> map = null;
+        if (beans.get(0) instanceof Map) {
+            map = (Map<String, Object>) beans.get(0);
+        } else {
+            map = CommonUtils.toMap(beans.get(0));
+        }
+        if (map == null) {
+            throw new Exception("获取bean属性失败");
+        }
+        List<String> properties = new ArrayList<String>();
+        properties.addAll(map.keySet());
+        WriteExcelUtils.writeWorkBook(workbook, count, beans, properties, properties, null);
+        OutputStream os = null;
+        try {
+            os = new FileOutputStream(file);
+            WriteExcelUtils.writeWorkBookToExcel(workbook, os);
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            CommonUtils.closeIOStream(null, os);
+        }
+    }
+
+    /**
      * 将Beans写入WorkBook中,默认以bean中的所有属性作为标题且写入第0行，0-based
      *
      * @param workbook   指定工作簿
-     * @param beans      指定写入的Beans
+     * @param beans      指定写入的Beans(或者泛型为Map)
      * @param dateFormat 日期格式
      * @return 返回传入的WorkBook
      */
@@ -257,7 +319,12 @@ public class WriteExcelUtils {
         if (beans == null || beans.isEmpty()) {
             return workbook;
         }
-        Map<String, Object> map = CommonUtils.toMap(beans.get(0));
+        Map<String, Object> map = null;
+        if (beans.get(0) instanceof Map) {
+            map = (Map<String, Object>) beans.get(0);
+        } else {
+            map = CommonUtils.toMap(beans.get(0));
+        }
         if (map == null) {
             return workbook;
         }
@@ -270,7 +337,7 @@ public class WriteExcelUtils {
      * 将Beans写入WorkBook中,默认以bean中的所有属性作为标题且写入第0行，0-based
      *
      * @param workbook 指定工作簿
-     * @param beans    指定写入的Beans
+     * @param beans    指定写入的Beans(或者泛型为Map)
      * @return 返回传入的WorkBook
      */
     public static <T> Workbook writeWorkBook(Workbook workbook, List<T> beans) {

@@ -6,13 +6,17 @@
 
     <groupId>com.github.flyinghe</groupId>
     <artifactId>common-utils</artifactId>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0.1-RELEASE</version>
     <packaging>jar</packaging>
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
         <version>7</version>
     </parent>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
     <profiles>
         <profile>
             <id>release</id>
@@ -24,8 +28,8 @@
                         <version>3.5</version>
                         <configuration>
                             <encoding>UTF-8</encoding>
-                            <source>1.8</source>
-                            <target>1.8</target>
+                            <source>${maven.compiler.source}</source>
+                            <target>${maven.compiler.target}</target>
                             <compilerArguments>
                                 <verbose />
                                 <bootclasspath>
@@ -83,11 +87,11 @@
                     <!--<artifactId>maven-install-plugin</artifactId>-->
                     <!--<version>2.5.1</version>-->
                     <!--</plugin>-->
-                    <!--<plugin>-->
-                    <!--<groupId>org.apache.maven.plugins</groupId>-->
-                    <!--<artifactId>maven-jar-plugin</artifactId>-->
-                    <!--<version>2.5</version>-->
-                    <!--</plugin>-->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>2.5</version>
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>

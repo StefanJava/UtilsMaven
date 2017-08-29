@@ -1,16 +1,18 @@
 package com.github.flyinghe.tools;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Map;
-import java.util.UUID;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.MethodUtils;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.poi.ss.formula.functions.T;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * 该类用于封装一些常用方法。 该类依赖的外部jar包: commons-beanutils-1.9.2.jar ;
@@ -149,5 +151,23 @@ public class CommonUtils {
             ip = request.getRemoteAddr();
         }
         return ip;
+    }
+
+    /**
+     * 将一个[]转换成List并输出,顺序与原[]一致
+     *
+     * @param array []数组
+     * @param <T>   任意对象类型(非原始类型)
+     * @return 转换后的List, 若array==null,返回null
+     */
+    public static <T> List<T> arrayToList(T[] array) {
+        List<T> list = null;
+        if (array != null) {
+            list = new ArrayList<>();
+            for (T e : array) {
+                list.add(e);
+            }
+        }
+        return list;
     }
 }
