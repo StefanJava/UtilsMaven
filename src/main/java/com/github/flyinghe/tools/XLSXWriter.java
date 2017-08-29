@@ -312,7 +312,7 @@ public class XLSXWriter<T> {
     }
 
     /**
-     * 设置当前写入行的行高(此值若指定则后面的行高会覆盖此前设定的Sheet行高,<0表示使用设定的Sheet行高)
+     * 设置当前写入行的行高(此值若指定则后面的行高会覆盖此前设定的Sheet行高,&lt;0表示使用设定的Sheet行高)
      *
      * @param rowHeight 指定当前行行高
      */

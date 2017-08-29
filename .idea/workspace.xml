@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fffe1b8e-c1b4-4fd1-974a-7dee2918c2dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" />
     </list>
     <ignored path="UtilsMaven.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +39,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            <state relative-caret-position="322">
+              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XLSXWriter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="217" column="56" lean-forward="false" selection-start-line="217" selection-start-column="56" selection-end-line="217" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -60,8 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>formatRawCellContents</find>
-      <find>poi</find>
       <find>@param beans</find>
       <find>allFlushed</find>
       <find>file</find>
@@ -90,6 +98,8 @@
       <find>System.out.println</find>
       <find>titles</find>
       <find>properties</find>
+      <find>&lt;0</find>
+      <find>&lt;=</find>
     </findStrings>
     <replaceStrings>
       <replace>&amp;lt;=</replace>
@@ -152,9 +162,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/WriteExcelUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/CommonUtils.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/domain/Student.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestExcelUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" />
       </list>
     </option>
   </component>
@@ -346,7 +356,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15527344" />
     <property name="project.structure.side.proportion" value="0.24276169" />
-    <property name="SearchEverywhereHistoryKey" value="pom&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/pom.xml&#10;Comm&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/CommonUtils.java&#10;SXss&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi-ooxml/3.14/poi-ooxml-3.14-sources.jar!/org/apache/poi/xssf/streaming/SXSSFWorkbook.java&#10;org.apache.poi.xssf.streaming.SXSSFWorkbook&#9;PSI&#9;JAVA://org.apache.poi.xssf.streaming.SXSSFWorkbook&#10;FormatTrackingHSSFListener&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi/3.14/poi-3.14.jar!/org/apache/poi/hssf/eventusermodel/FormatTrackingHSSFListener.class&#10;XSSFSheetXMLHandler&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi-ooxml/3.14/poi-ooxml-3.14-sources.jar!/org/apache/poi/xssf/eventusermodel/XSSFSheetXMLHandler.java&#10;Email&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/Email.java&#10;XLs&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/XLSReader.java&#10;XL&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/XLSXReader.java&#10;Read&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/ReadExcelUtils.java&#10;pom.x&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/pom.xml&#10;set ba&#9;ACTION&#9;Images.SetBackgroundImage" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/XLSXWriter.java&#10;pom&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/pom.xml&#10;Comm&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/CommonUtils.java&#10;SXss&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi-ooxml/3.14/poi-ooxml-3.14-sources.jar!/org/apache/poi/xssf/streaming/SXSSFWorkbook.java&#10;org.apache.poi.xssf.streaming.SXSSFWorkbook&#9;PSI&#9;JAVA://org.apache.poi.xssf.streaming.SXSSFWorkbook&#10;FormatTrackingHSSFListener&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi/3.14/poi-3.14.jar!/org/apache/poi/hssf/eventusermodel/FormatTrackingHSSFListener.class&#10;XSSFSheetXMLHandler&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi-ooxml/3.14/poi-ooxml-3.14-sources.jar!/org/apache/poi/xssf/eventusermodel/XSSFSheetXMLHandler.java&#10;Email&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/Email.java&#10;XLs&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/XLSReader.java&#10;XL&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/XLSXReader.java&#10;Read&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/ReadExcelUtils.java&#10;pom.x&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/pom.xml&#10;set ba&#9;ACTION&#9;Images.SetBackgroundImage" />
     <property name="js-jscs-nodeInterpreter" value="D:\NodeJs\nodejs\node.exe" />
     <property name="nodejs_interpreter_path" value="D:/NodeJs/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -1079,7 +1089,7 @@
       <workItem from="1503734518120" duration="50480000" />
       <workItem from="1503883216853" duration="10515000" />
       <workItem from="1503909346225" duration="9489000" />
-      <workItem from="1503927556412" duration="26514000" />
+      <workItem from="1503927556412" duration="27374000" />
     </task>
     <task id="LOCAL-00001" summary="修改了Group id">
       <created>1502849554877</created>
@@ -1116,7 +1126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503988122541</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改版本号">
+      <created>1503989082388</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1503989082388</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1152,7 +1169,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179283000" />
+    <option name="totallyTimeSpent" value="180143000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1273,7 +1290,8 @@
     <MESSAGE value="为上传到Maven中央仓库修改了一些注释，已通过JavaDoc的验证" />
     <MESSAGE value="添加了一些版权信息" />
     <MESSAGE value="增加大数据量写入Excel文档工具类(仅支持xlsx)" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加大数据量写入Excel文档工具类(仅支持xlsx)" />
+    <MESSAGE value="修改版本号" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改版本号" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1661,21 +1679,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-          <folding>
-            <element signature="e#14548#14549#0" expanded="true" />
-            <element signature="e#14639#14640#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="322">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        <state relative-caret-position="203">
+          <caret line="217" column="56" lean-forward="false" selection-start-line="217" selection-start-column="56" selection-end-line="217" selection-end-column="56" />
           <folding />
         </state>
       </provider>
