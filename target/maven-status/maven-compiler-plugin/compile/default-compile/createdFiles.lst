@@ -4,6 +4,7 @@ com\github\flyinghe\tools\PasswordUtils.class
 com\github\flyinghe\tools\PaymentUtil.class
 com\github\flyinghe\depdcy\ExcelHandler.class
 com\github\flyinghe\tools\VerificationCodeImage.class
+com\github\flyinghe\depdcy\ExcelWriterHandler.class
 com\github\flyinghe\tools\MyBatisUtils.class
 com\github\flyinghe\tools\DBUtils.class
 com\github\flyinghe\depdcy\XSSFSheetXMLHandlerPlus$1.class
@@ -13,6 +14,7 @@ com\github\flyinghe\depdcy\XSSFSheetXMLHandlerPlus.class
 com\github\flyinghe\tools\HibernateUtils$1.class
 com\github\flyinghe\depdcy\XSSFSheetXMLHandlerPlus$xssfDataType.class
 com\github\flyinghe\tools\Email.class
+com\github\flyinghe\tools\XLSXWriter.class
 com\github\flyinghe\tools\DOM4JTools.class
 com\github\flyinghe\tools\BaseHttpServlet.class
 com\github\flyinghe\tools\ImgUtils.class

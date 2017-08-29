@@ -3,16 +3,12 @@ package com.github.flyinghe.tools;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.MethodUtils;
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.poi.ss.formula.functions.T;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.util.*;
 
 /**
  * 该类用于封装一些常用方法。 该类依赖的外部jar包: commons-beanutils-1.9.2.jar ;
@@ -169,5 +165,65 @@ public class CommonUtils {
             }
         }
         return list;
+    }
+
+    /**
+     * 将一张图片转换成指定格式的Base64字符串编码
+     *
+     * @param image      指定一张图片
+     * @param formatName 图片格式名,如gif,png,jpg,jpeg等,默认为jpeg
+     * @return 返回编码好的字符串, 失败返回null
+     */
+    public static String imgToBase64Str(BufferedImage image, String formatName) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        String base64Str = null;
+        try {
+            ImageIO.write(image, formatName == null ? "jpeg" : formatName, baos);
+            byte[] bytes = baos.toByteArray();
+            Base64.Encoder encoder = Base64.getEncoder();
+            base64Str = encoder.encodeToString(bytes);
+        } catch (IOException e) {
+            throw new RuntimeException("Making Image transform to Base64 String failed");
+        } finally {
+            CommonUtils.closeIOStream(null, baos);
+        }
+        return base64Str;
+    }
+
+    /**
+     * 将一张图片转换成指定格式的Base64字符串编码,带类似于"data:image/png;base64,"前缀,
+     * 返回的字符串可直接放入HTML img标签src属性中显示图片
+     *
+     * @param image      指定一张图片
+     * @param formatName 图片格式名,如gif,png,jpg,jpeg等,默认为jpeg
+     * @return 返回编码好的字符串, 失败返回null
+     */
+    public static String imgToBase64StrWithPrefix(BufferedImage image, String formatName) {
+        formatName = formatName != null ? formatName : "jpeg";
+        return String.format("data:image/%s;base64,%s", formatName, imgToBase64Str(image, formatName));
+    }
+
+    /**
+     * 将Base64字符串转化成Image对象
+     *
+     * @param imgStr 指定Base64编码的图片字符串
+     * @return 返回转化后的Image对象, 失败返回Null
+     */
+    public static BufferedImage base64StrToImg(String imgStr) {
+        Base64.Decoder decoder = Base64.getDecoder();
+        byte[] bytes = decoder.decode(imgStr);
+        for (int i = 0; i < bytes.length; i++) {
+            if (bytes[i] < 0) {
+                bytes[i] += 256;
+            }
+        }
+        ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(bais);
+        } catch (IOException e) {
+            throw new RuntimeException("Making Base64 String transform to Image failed");
+        }
+        return image;
     }
 }
