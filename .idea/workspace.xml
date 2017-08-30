@@ -7,23 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fffe1b8e-c1b4-4fd1-974a-7dee2918c2dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/common-utils-sources.jar" afterPath="$PROJECT_DIR$/target/common-utils-sources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/common-utils.jar" afterPath="$PROJECT_DIR$/target/common-utils.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/settings.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/common-utils-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/common-utils.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/CommonUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/CommonUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestImgCompress.java" afterPath="$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestImgCompress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
     </list>
     <ignored path="UtilsMaven.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path=".idea/dataSources.local.xml" />
+    <ignored path="src/main/resources/" />
+    <ignored path="src/main/webapp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +31,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -48,21 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VerificationCodeImage.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="VerificationCodeImage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="214" column="49" lean-forward="true" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommonUtils.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/CommonUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-141">
-              <caret line="205" column="7" lean-forward="true" selection-start-line="205" selection-start-column="7" selection-end-line="205" selection-end-column="7" />
+            <state relative-caret-position="237">
+              <caret line="215" column="26" lean-forward="false" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -175,9 +166,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/CommonUtils.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestImgCompress.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/CommonUtils.java" />
       </list>
     </option>
   </component>
@@ -346,11 +337,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15527344" />
     <property name="project.structure.side.proportion" value="0.24276169" />
     <property name="SearchEverywhereHistoryKey" value="Comm&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/CommonUtils.java&#10;Ver&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java&#10;pom&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/pom.xml&#10;SXss&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi-ooxml/3.14/poi-ooxml-3.14-sources.jar!/org/apache/poi/xssf/streaming/SXSSFWorkbook.java&#10;org.apache.poi.xssf.streaming.SXSSFWorkbook&#9;PSI&#9;JAVA://org.apache.poi.xssf.streaming.SXSSFWorkbook&#10;FormatTrackingHSSFListener&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi/3.14/poi-3.14.jar!/org/apache/poi/hssf/eventusermodel/FormatTrackingHSSFListener.class&#10;XSSFSheetXMLHandler&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi-ooxml/3.14/poi-ooxml-3.14-sources.jar!/org/apache/poi/xssf/eventusermodel/XSSFSheetXMLHandler.java&#10;Email&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/Email.java&#10;XLs&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/XLSReader.java&#10;XL&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/XLSXReader.java&#10;Read&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/ReadExcelUtils.java&#10;pom.x&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/pom.xml&#10;set ba&#9;ACTION&#9;Images.SetBackgroundImage" />
@@ -1095,7 +1086,7 @@
       <workItem from="1503909346225" duration="9489000" />
       <workItem from="1503927556412" duration="27477000" />
       <workItem from="1503993539411" duration="1877000" />
-      <workItem from="1504017169366" duration="5935000" />
+      <workItem from="1504017169366" duration="7954000" />
     </task>
     <task id="LOCAL-00001" summary="修改了Group id">
       <created>1502849554877</created>
@@ -1146,7 +1137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503989998839</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="添加Base64码与图片互转功能">
+      <created>1504023170438</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1504023170438</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1182,7 +1180,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188058000" />
+    <option name="totallyTimeSpent" value="190077000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1216,10 +1214,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4967213" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3180328" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2246596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2246596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1305,7 +1303,8 @@
     <MESSAGE value="增加大数据量写入Excel文档工具类(仅支持xlsx)" />
     <MESSAGE value="修改版本号" />
     <MESSAGE value="修改Javadoc以通过Maven Center验证" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改Javadoc以通过Maven Center验证" />
+    <MESSAGE value="添加Base64码与图片互转功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加Base64码与图片互转功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1665,14 +1664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="214" column="49" lean-forward="true" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -1693,8 +1684,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/CommonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="205" column="7" lean-forward="true" selection-start-line="205" selection-start-column="7" selection-end-line="205" selection-end-column="7" />
+        <state relative-caret-position="161">
+          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="215" column="26" lean-forward="false" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1758,7 +1757,6 @@
             <option name="proportions">
               <list>
                 <option value="0.24276169" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1792,10 +1790,10 @@
   </component>
   <component name="mavenExecuteGoalHistory">
     <option value="$PROJECT_DIR$" />
+    <option value="clean" />
     <option value="clean deploy -P release" />
     <option value="clean install" />
     <option value="install" />
-    <option value="clean" />
     <option value="clean deploy -P sonatype-oss-release -Darguments=&quot;460588923%%Flying&quot;" />
     <option value="compile" />
     <option value="install skip" />

@@ -3,6 +3,7 @@ package com.github.flyinghe.tools;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.MethodUtils;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.poi.ss.formula.functions.T;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -42,8 +43,7 @@ public class CommonUtils {
             bean = clazz.newInstance();
             BeanUtils.populate(bean, property);
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException(e);
         }
         return bean;
     }
@@ -67,8 +67,7 @@ public class CommonUtils {
                 map.put(property, o);
             }
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException(e);
         }
         return map;
     }
@@ -183,7 +182,7 @@ public class CommonUtils {
             Base64.Encoder encoder = Base64.getEncoder();
             base64Str = encoder.encodeToString(bytes);
         } catch (IOException e) {
-            throw new RuntimeException("Making Image transform to Base64 String failed");
+            throw new RuntimeException(e);
         } finally {
             CommonUtils.closeIOStream(null, baos);
         }
@@ -222,7 +221,7 @@ public class CommonUtils {
         try {
             image = ImageIO.read(bais);
         } catch (IOException e) {
-            throw new RuntimeException("Making Base64 String transform to Image failed");
+            throw new RuntimeException(e);
         }
         return image;
     }
