@@ -222,6 +222,8 @@ public class CommonUtils {
             image = ImageIO.read(bais);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } finally {
+            CommonUtils.closeIOStream(bais, null);
         }
         return image;
     }
