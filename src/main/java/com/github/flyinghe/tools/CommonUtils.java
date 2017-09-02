@@ -12,9 +12,6 @@ import java.io.*;
 import java.util.*;
 
 /**
- * 该类用于封装一些常用方法。 该类依赖的外部jar包: commons-beanutils-1.9.2.jar ;
- * commons-logging-1.2.jar。
- *
  * @author Flying
  */
 public class CommonUtils {
@@ -30,14 +27,13 @@ public class CommonUtils {
     }
 
     /**
-     * 该方法用于将一个存储了Bean类属性的Map对象中的key value 分别作为属性名和属性值， 赋值给该Bean类的一个实例。
-     * 该方法只能将Map中的key与对应Bean中的属性名的属性赋值，通过setter器赋值，因此Bean必须符合JavaBean规范。
+     * 将一个Map对象转换成一个Bean对象
      *
-     * @param property 一个Map对象，封装了相应的Bean类中的属性
-     * @param clazz    Bean类的Class对象
+     * @param property 一个Map对象，封装了相应的Bean中的属性
+     * @param clazz    需要转换成的Bean
      * @return 返回一个封装好的Bean类实例，封装失败返回null
      */
-    public static <T> T toBean(Map<String, ? extends Object> property, Class<T> clazz) {
+    public static <T extends Object> T toBean(Map<String, ? extends Object> property, Class<T> clazz) {
         T bean = null;
         try {
             bean = clazz.newInstance();
@@ -49,12 +45,13 @@ public class CommonUtils {
     }
 
     /**
-     * 将一个JavaBean对象的所有属性封装在Map中并返回，通过getter器获取该Bean属性
+     * 将一个JavaBean对象的所有属性封装在Map中并返回，
+     * 注意只能将拥有Getter方法的属性才能取出并封装到Map中
      *
      * @param bean 需要转换的Bean对象
      * @return 返回一个Map , 失败返回null
      */
-    public static <T> Map<String, Object> toMap(T bean) {
+    public static <T extends Object> Map<String, Object> toMap(T bean) {
         Map<String, Object> map = null;
         try {
             map = PropertyUtils.describe(bean);
@@ -73,14 +70,13 @@ public class CommonUtils {
     }
 
     /**
-     * 该方法用于将一个存储了Bean类属性的Map对象中的key value 分别作为属性名和属性值， 重新赋值给该Bean类的一个实例。
-     * 该方法要求Bean类中的属性名与Map对象中的key值相对应, 此方法用于修改一个已存在对象的属性
+     * 将Bean的属性值修改为Map中对应的值
      *
      * @param property 一个Map对象，封装了相应的Bean类中的属性
      * @param bean     需要修改的Bean类
      * @return 返回一个属性已修改的Bean类实例
      */
-    public static <T> T modifyBean(Map<String, ? extends Object> property, T bean) {
+    public static <T extends Object> T modifyBean(Map<String, ? extends Object> property, T bean) {
         try {
             BeanUtils.populate(bean, property);
             return bean;
@@ -96,7 +92,7 @@ public class CommonUtils {
      * @return 返回一个被复制对象的一个副本
      */
     @SuppressWarnings("unchecked")
-    public static <T> T cloneBean(T bean) {
+    public static <T extends Object> T cloneBean(T bean) {
         try {
             T newBean = (T) BeanUtils.cloneBean(bean);
             return newBean;
@@ -164,6 +160,23 @@ public class CommonUtils {
             }
         }
         return list;
+    }
+
+    /**
+     * 将一个List数组转换成[]
+     *
+     * @param list  List数组
+     * @param array List数组元素存储在此[]中
+     * @param <T>
+     * @return 转换后的[], 若list==null或者array==null返回Null
+     * @see List#toArray(Object[])
+     */
+    public static <T> T[] listToArray(List<T> list, T[] array) {
+        if (list == null || array == null) {
+            return null;
+        }
+
+        return list.toArray(array);
     }
 
     /**

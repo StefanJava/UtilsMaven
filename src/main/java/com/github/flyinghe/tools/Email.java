@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 表示邮件类，你需要设置：发件人，收件人、被抄送人(可选)、被密送人(可选)、主题（默认为空）、内容（默认为空），
+ * 用于发送邮件,表示邮件类，你需要设置：发件人，收件人、被抄送人(可选)、被密送人(可选)、主题（默认为空）、内容（默认为空），
  * 内容MIME类型（默认为"text/plain;charset=utf-8"）以及附件(可选)。
- * 本类依赖的外部类：at.flying.tools.AttachmentBean；
  *
  * @author Flying
+ * @see AttachmentBean
+ * @see MailUtils
  */
 public class Email {
     private String from = null;// 发件人

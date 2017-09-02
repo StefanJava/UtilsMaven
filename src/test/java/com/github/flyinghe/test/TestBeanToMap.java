@@ -4,10 +4,12 @@ import com.github.flyinghe.tools.CommonUtils;
 import com.github.flyinghe.tools.WriteExcelUtils;
 import com.github.flyinghe.domain.Pet;
 import com.github.flyinghe.domain.User;
+import org.apache.commons.collections.map.HashedMap;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.io.*;
 import java.util.*;
 
@@ -15,6 +17,27 @@ import java.util.*;
  * Created by Flying on 2016/5/28.
  */
 public class TestBeanToMap {
+
+    @Test
+    public void test4() throws Exception {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(i);
+        }
+        Integer[] ints = CommonUtils.listToArray(list, new Integer[list.size()]);
+        System.out.println(ints);
+    }
+
+    @Test
+    public void test3() throws Exception {
+        Map<String, Object> map = new HashedMap();
+        map.put("name", "nn");
+        map.put("sex", 12);
+        map.put("error", "error");
+        map.put("birth", new Date());
+        User user = CommonUtils.toBean(map, User.class);
+        System.out.println(user);
+    }
 
     @Test
     public void test1() throws Exception {

@@ -12,7 +12,7 @@ import java.util.*;
 /**
  * Created by Flying on 2016/5/28.
  * <p>
- * 本类用于将JavaBean写入Excel文档中，采用POI(3.14及以上版本)技术，使用时需导入相关Jar包。
+ * 本类用于将JavaBean写入Excel文档中，采用POI(3.14及以上版本)技术。
  * </p>
  */
 public class WriteExcelUtils {

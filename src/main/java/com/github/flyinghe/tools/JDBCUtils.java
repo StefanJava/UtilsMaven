@@ -14,8 +14,6 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 /**
  * JDBC工具类
  * ，本类采用的数据库连接池是c3p0。c3p0连接池的配置文件必须在src目录下，且名称必须为c3p0-config.xml，并且采用的是默认配置。
- * 本类依赖的jar包: mysql-connector-java-5.1.37-bin.jar，c3p0-0.9.5.2.jar,mchange
- * -commons-java-0.2.11.jar。
  *
  * @author Flying
  */
@@ -51,7 +49,7 @@ public class JDBCUtils {
             // 若为null则从连接池里返回一个连接
             connection = dataSource.getConnection();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return connection;
     }
@@ -105,8 +103,7 @@ public class JDBCUtils {
             tl_conn.set(connection);
             tl_sp.set(new Stack<Savepoint>());
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -123,8 +120,7 @@ public class JDBCUtils {
             Savepoint sp = connection.setSavepoint();
             stack_sp.push(sp);
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -143,7 +139,7 @@ public class JDBCUtils {
             tl_sp.remove();
         } catch (SQLException e) {
             JDBCUtils.rollbackTransaction();
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -161,8 +157,7 @@ public class JDBCUtils {
             tl_conn.remove();
             tl_sp.remove();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -182,8 +177,7 @@ public class JDBCUtils {
             }
             connection.rollback(stack_sp.pop());
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 

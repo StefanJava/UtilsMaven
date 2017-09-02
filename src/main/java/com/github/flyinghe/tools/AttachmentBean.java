@@ -3,9 +3,11 @@ package com.github.flyinghe.tools;
 import java.io.File;
 
 /**
- * 附件类
+ * 附件类,用于发邮件的附件
  *
  * @author Flying
+ * @see Email
+ * @see MailUtils
  */
 public class AttachmentBean {
     private String cid;
@@ -29,13 +31,11 @@ public class AttachmentBean {
      * @param fileName 指定带有后缀名的文件名
      */
     public AttachmentBean(File file, String fileName) {
-        super();
-        this.file = file;
-        this.fileName = fileName;
+        this(null, file, fileName);
     }
 
     public AttachmentBean() {
-        super();
+        this(null, null);
     }
 
     /**

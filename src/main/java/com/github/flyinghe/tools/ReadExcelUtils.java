@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 本类用于读取Excel文档，使用POI(3.14及以上版本)技术解析，使用时需导入相关Jar包。
+ * 本类用于读取Excel文档，使用POI(3.14及以上版本)技术解析。
  *
  * @author Flying
  */

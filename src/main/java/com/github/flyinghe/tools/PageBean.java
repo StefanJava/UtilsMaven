@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * 本类用于分页操作
  * Created by Flying on 2016/6/5.
+ * <p>本类用于分页操作</p>
  */
 public class PageBean<T> implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -19,14 +19,10 @@ public class PageBean<T> implements Serializable {
     private List<T> beanList = null;// 当前页的记录对象
 
     /**
-     * @param pageCode
-     *         当前页码
-     * @param pageRecord
-     *         设置的每页显示的记录数
-     * @param totalRecord
-     *         总的记录数
-     * @param indexNo
-     *         索引数
+     * @param pageCode    当前页码
+     * @param pageRecord  设置的每页显示的记录数
+     * @param totalRecord 总的记录数
+     * @param indexNo     索引数
      */
     public PageBean(Integer pageCode, Integer pageRecord, Long totalRecord, Integer indexNo) {
         this.pageCode = pageCode;
@@ -36,16 +32,11 @@ public class PageBean<T> implements Serializable {
     }
 
     /**
-     * @param pageCode
-     *         当前页码
-     * @param pageRecord
-     *         设置的每页显示的记录数
-     * @param indexNo
-     *         索引数
-     * @param totalRecord
-     *         总的记录数
-     * @param beanList
-     *         记录对像集合
+     * @param pageCode    当前页码
+     * @param pageRecord  设置的每页显示的记录数
+     * @param indexNo     索引数
+     * @param totalRecord 总的记录数
+     * @param beanList    记录对像集合
      */
     public PageBean(Integer pageCode, Integer pageRecord, Integer indexNo, Long totalRecord, List<T> beanList) {
         super();
@@ -68,8 +59,7 @@ public class PageBean<T> implements Serializable {
     /**
      * 设置当前页码
      *
-     * @param pageCode
-     *         当前页码
+     * @param pageCode 当前页码
      */
     public void setPageCode(Integer pageCode) {
         this.pageCode = pageCode;
@@ -87,8 +77,7 @@ public class PageBean<T> implements Serializable {
     /**
      * 设置每页显示的记录数
      *
-     * @param pageRecord
-     *         每页记录数
+     * @param pageRecord 每页记录数
      */
     public void setPageRecord(Integer pageRecord) {
         this.pageRecord = pageRecord;
@@ -106,8 +95,7 @@ public class PageBean<T> implements Serializable {
     /**
      * 设置总的记录数
      *
-     * @param totalRecord
-     *         总记录数
+     * @param totalRecord 总记录数
      */
     public void setTotalRecord(Long totalRecord) {
         this.totalRecord = totalRecord;
@@ -125,8 +113,7 @@ public class PageBean<T> implements Serializable {
     /**
      * 设置索引数
      *
-     * @param indexNo
-     *         索引数
+     * @param indexNo 索引数
      */
     public void setIndexNo(Integer indexNo) {
         this.indexNo = indexNo;
@@ -174,8 +161,7 @@ public class PageBean<T> implements Serializable {
     /**
      * 设置记录对象
      *
-     * @param beanList
-     *         记录对像集合
+     * @param beanList 记录对像集合
      */
     public void setBeanList(List<T> beanList) {
         this.beanList = beanList;
@@ -186,7 +172,7 @@ public class PageBean<T> implements Serializable {
      */
     private void setBeginAndEnd() {
         Integer totalPage = this.getTotalPage();
-        if(totalPage <= this.indexNo) {
+        if (totalPage <= this.indexNo) {
             this.begin = 1;
             this.end = totalPage;
             return;
@@ -194,12 +180,12 @@ public class PageBean<T> implements Serializable {
 
         int minus = this.indexNo / 2;
         int add = this.indexNo % 2 == 0 ? minus - 1 : minus;
-        if(this.pageCode - minus < 1) {
+        if (this.pageCode - minus < 1) {
             this.begin = 1;
             this.end = this.indexNo;
             return;
         }
-        if(this.pageCode + add > totalPage) {
+        if (this.pageCode + add > totalPage) {
             this.begin = totalPage - (this.indexNo - 1);
             this.end = totalPage;
             return;

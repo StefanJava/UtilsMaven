@@ -16,8 +16,7 @@ import java.util.Map;
 import org.apache.commons.beanutils.BeanUtils;
 
 /**
- * DAO (DATA ACCESS OBJECT)。 该类依赖的类: at.flying.tools.JDBCUtils。 该类依赖的外部jar包:
- * commons-beanutils-1.9.2.jar ; commons-logging-1.2.jar。
+ * DAO (DATA ACCESS OBJECT)。
  *
  * @author Flying
  * @see JDBCUtils

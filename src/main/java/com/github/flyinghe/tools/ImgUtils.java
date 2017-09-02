@@ -12,7 +12,7 @@ import java.io.FileOutputStream;
 
 /**
  * Created by FlyingHe on 2016/12/5.
- * 本类提供多种方式压缩图片
+ * <p>本类提供多种方式压缩图片</p>
  *
  * @author Flyinghe
  */
@@ -48,7 +48,7 @@ public class ImgUtils {
             desImg.getGraphics().drawImage(srcImg, 0, 0, width, height, null);
             encodeImg(desFile, desImg, quality);
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -60,7 +60,7 @@ public class ImgUtils {
      * @param quality 编码质量
      * @throws Exception
      */
-    private static void encodeImg(String desFile, BufferedImage desImg, Float quality) throws Exception {
+    private static void encodeImg(String desFile, BufferedImage desImg, Float quality) {
         FileOutputStream out = null;
         try {
             if (quality != null) {
@@ -83,7 +83,7 @@ public class ImgUtils {
                 encoder.encode(desImg);
             }
         } catch (Exception e) {
-            throw e;
+            throw new RuntimeException(e);
         } finally {
             CommonUtils.closeIOStream(null, out);
         }
@@ -137,7 +137,7 @@ public class ImgUtils {
 
             encodeImg(desFile, desImg, quality);
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }

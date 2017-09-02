@@ -32,8 +32,7 @@ public class AESUtil {
             keyGen.init(length);
             key = keyGen.generateKey();
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException(e);
         }
         return key.getEncoded();
     }
@@ -53,7 +52,7 @@ public class AESUtil {
             cipher.init(Cipher.ENCRYPT_MODE, secretKey);
             b = cipher.doFinal(str.getBytes());
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return b;
     }
@@ -73,7 +72,7 @@ public class AESUtil {
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
             _str = new String(cipher.doFinal(b));
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return _str;
     }

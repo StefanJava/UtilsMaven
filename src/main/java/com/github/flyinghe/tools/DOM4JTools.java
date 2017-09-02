@@ -11,7 +11,7 @@ import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
 /**
- * DOM4J工具类，本类依赖于dom4j-1.6.1.jar包
+ * DOM4J工具类。
  * 
  * @author Flying
  * 
@@ -31,8 +31,7 @@ public class DOM4JTools {
 		try {
 			document = reader.read(file);
 		} catch (DocumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 		return document;
 	}
@@ -54,15 +53,13 @@ public class DOM4JTools {
 			xmlWriter.write(document);
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		} finally {
 			if (xmlWriter != null) {
 				try {
 					xmlWriter.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					throw new RuntimeException(e);
 				}
 			}
 		}
