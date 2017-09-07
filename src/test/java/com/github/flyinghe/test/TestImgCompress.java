@@ -8,15 +8,31 @@ import org.junit.Test;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * Created by FlyingHe on 2016/12/5.
  */
 public class TestImgCompress {
     @Test
+    public void testq1() {
+        Collection<String> c = new ArrayList();
+        c.add("JavaSE");
+        c.add("JavaWeb");
+        c.add("JavaEE");
+        c.add("JavaEE");
+
+        Iterator it = c.iterator();
+        for (String s : c) {
+        }
+    }
+
+    @Test
     public void testq() throws IOException {
-        VerificationCodeImage codeImage = new VerificationCodeImage(200, 100, 4, null);
+        VerificationCodeImage codeImage = new VerificationCodeImage(200, 100, 4, new String("你麻痹啊傻逼"));
         String imgstr = CommonUtils.imgToBase64Str(codeImage.getImage(), null);
 
         BufferedImage bufferedImage = CommonUtils.base64StrToImg(imgstr);
@@ -33,14 +49,30 @@ public class TestImgCompress {
         System.out.println(s2);
     }
 
+
+    @Test
+    public void testCharAt() {
+        String str = "你麻痹啊";
+        char a = '你';
+        System.out.println(str.charAt(0) + ":" + str.length());
+    }
+
     @Test
     public void testVerifyCode() throws IOException {
-        VerificationCodeImage codeImage = new VerificationCodeImage(200, 100, 4, null);
-        File file = new File("C:\\Users\\FlyingHe\\Desktop", "vcode.jpg");
+//        VerificationCodeImage codeImage = new VerificationCodeImage(
+//                200, 100, 4, -1,0,null);
+//        VerificationCodeImage codeImage = new VerificationCodeImage(
+//                200, 100, 4, null);
+        VerificationCodeImage codeImage = new VerificationCodeImage(
+                206, 58,  4, 50,10);
+//        VerificationCodeImage codeImage = new VerificationCodeImage(
+//                200, 100, 4, -1, 0, -1, 0, null, "你麻痹啊");
+//        VerificationCodeImage codeImage = new VerificationCodeImage(-1,-1,-1,-1,-1);
+        File file = new File("C:\\Users\\FlyingHe\\Desktop", "vcode1.jpg");
         OutputStream os = new FileOutputStream(file);
         VerificationCodeImage.output(codeImage.getImage(), os);
         os.close();
-        System.out.println(this.encode(codeImage.getImage()));
+        System.out.println(codeImage.getText());
     }
 
     public String encode(BufferedImage image) throws IOException {
