@@ -64,7 +64,7 @@ public class TestImgCompress {
 //        VerificationCodeImage codeImage = new VerificationCodeImage(
 //                200, 100, 4, null);
         VerificationCodeImage codeImage = new VerificationCodeImage(
-                206, 58,  4, 50,10);
+                206, 58, 4, 50, 10);
 //        VerificationCodeImage codeImage = new VerificationCodeImage(
 //                200, 100, 4, -1, 0, -1, 0, null, "你麻痹啊");
 //        VerificationCodeImage codeImage = new VerificationCodeImage(-1,-1,-1,-1,-1);

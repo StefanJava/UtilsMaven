@@ -25,7 +25,7 @@ import javax.imageio.ImageIO;
  */
 public class VerificationCodeImage {
     public static final String CODES = "23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ";
-    public static final String[] FONT_NAMES = new String[]{"宋体", "华文楷体", "黑体", "微软雅黑", "楷体_GB2312"};
+    public static final String[] FONT_NAMES = new String[]{"宋体", "华文楷体", "黑体", "微软雅黑", "楷体_GB2312", "Algerian"};
 
     private int w;
     private int h;
