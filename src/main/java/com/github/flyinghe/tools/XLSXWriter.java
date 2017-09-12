@@ -426,7 +426,7 @@ public class XLSXWriter<T> {
      * @param value 值
      * @return 若此单元格写入空数据则返回true, 否则返回false
      */
-    public boolean setCellValue(Cell cell, Object value) {
+    private boolean setCellValue(Cell cell, Object value) {
         boolean isBlankCell = false;
         if (value == null) {
             cell.setCellValue("");
@@ -462,7 +462,7 @@ public class XLSXWriter<T> {
      * @param data 指定写入数据
      * @return 若此行至少有一个非空单元格则返回true, 换言之, 此行写入完毕后仍为空行的话返回false, 非空行返回true
      */
-    public boolean writePerRow(Row row, Map<String, Object> data) {
+    private boolean writePerRow(Row row, Map<String, Object> data) {
         boolean isNotBlankRow = false;
         int currenCol = -1;//标识当前写入的列
         for (int i = 0; i < this.properties.size(); i++) {

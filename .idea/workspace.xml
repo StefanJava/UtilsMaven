@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="c21d3750-9a94-40ae-94d5-85763e1db3c2" name="DoNotNeedCommit" comment="">
+    <list id="c21d3750-9a94-40ae-94d5-85763e1db3c2" name="No Push" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/github/flyinghe/utlils/VerifyCodeUtils.java" />
     </list>
     <list default="true" id="fffe1b8e-c1b4-4fd1-974a-7dee2918c2dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UtilsMaven.iml" afterPath="$PROJECT_DIR$/UtilsMaven.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestImgCompress.java" afterPath="$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestImgCompress.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" />
     </list>
     <ignored path="UtilsMaven.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,7 +102,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSReader.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/domain/Student.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestExcelUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/domain/User.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -125,6 +122,7 @@
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestImgCompress.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/utlils/VerifyCodeUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" />
       </list>
     </option>
   </component>
@@ -171,8 +169,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="168" />
-    <option name="y" value="-14" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
@@ -193,6 +191,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,6 +209,42 @@
               <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
               <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="flyinghe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -225,6 +261,15 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="flyinghe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="flyinghe" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
@@ -239,8 +284,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -270,7 +313,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.VerifyCodeUtils">
+  <component name="RunManager" selected="JUnit.TestImgCompress.testVerifyCode">
     <configuration name="TestImgCompress.testCharAt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -321,7 +364,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="TestImgCompress.testq" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestImgCompress.testVerifyCodeBase64" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.github.flyinghe.test.*" />
@@ -333,7 +376,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.github.flyinghe.test" />
       <option name="MAIN_CLASS_NAME" value="com.github.flyinghe.test.TestImgCompress" />
-      <option name="METHOD_NAME" value="testq" />
+      <option name="METHOD_NAME" value="testVerifyCodeBase64" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -962,17 +1005,17 @@
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Utils" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testVerifyCode" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testCharAt" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testq" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testq1" />
-      <item index="5" class="java.lang.String" itemvalue="Application.VerifyCodeUtils" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testq1" />
+      <item index="4" class="java.lang.String" itemvalue="Application.VerifyCodeUtils" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testVerifyCodeBase64" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.VerifyCodeUtils" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testVerifyCode" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testCharAt" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testq1" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testq" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testVerifyCode" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testVerifyCodeBase64" />
+        <item index="2" class="java.lang.String" itemvalue="Application.VerifyCodeUtils" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testCharAt" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestImgCompress.testq1" />
       </list>
     </recent_temporary>
   </component>
@@ -1051,7 +1094,9 @@
       <workItem from="1504766509340" duration="187000" />
       <workItem from="1504772949985" duration="220000" />
       <workItem from="1504773756358" duration="516000" />
-      <workItem from="1504774839798" duration="2299000" />
+      <workItem from="1504774839798" duration="3191000" />
+      <workItem from="1505199495377" duration="800000" />
+      <workItem from="1505202767746" duration="700000" />
     </task>
     <task id="LOCAL-00001" summary="修改了Group id">
       <created>1502849554877</created>
@@ -1137,31 +1182,17 @@
       <option name="project" value="LOCAL" />
       <updated>1504765074407</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Bug Fixed">
+      <created>1504777174756</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1504777174756</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 13h 33m 37s.xml">
-      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 13h 33m 45s.xml">
-      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 13h 33m 51s.xml">
-      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 13h 34m 04s.xml">
-      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 13h 34m 47s.xml">
-      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 13h 35m 43s.xml">
-      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 13h 36m 25s.xml">
-      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 13h 37m 17s.xml">
       <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
     </history-entry>
@@ -1171,9 +1202,30 @@
     <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 13h 38m 18s.xml">
       <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 17h 40m 25s.xml">
+      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 17h 40m 40s.xml">
+      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 17h 40m 55s.xml">
+      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 17h 41m 07s.xml">
+      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 17h 41m 22s.xml">
+      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestImgCompress_testVerifyCode - 2017.09.07 at 17h 41m 37s.xml">
+      <configuration name="TestImgCompress.testVerifyCode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestImgCompress_testVerifyCodeBase64 - 2017.09.07 at 17h 40m 02s.xml">
+      <configuration name="TestImgCompress.testVerifyCodeBase64" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57036000" />
+    <option name="totallyTimeSpent" value="59428000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1188,29 +1240,27 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33812407" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30257186" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50491804" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33812407" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3147541" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4967213" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25189108" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30257186" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50491804" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1218,10 +1268,12 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1315,13 +1367,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="69" lean-forward="false" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.xml" />
     <entry file="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2-sources.jar!/org/apache/commons/beanutils/PropertyUtilsBean.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1398,13 +1443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/CommonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="862">
-          <caret line="220" column="37" lean-forward="true" selection-start-line="220" selection-start-column="37" selection-end-line="220" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1541,14 +1579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="926">
-          <caret line="722" column="19" lean-forward="false" selection-start-line="722" selection-start-column="19" selection-end-line="722" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/JDK/src.zip!/com/sun/image/codec/jpeg/JPEGCodec.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3017">
@@ -1584,13 +1614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestExcelUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/JDK/src.zip!/java/awt/image/BufferedImage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -1623,7 +1646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1631,7 +1653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="225" column="31" lean-forward="false" selection-start-line="225" selection-start-column="31" selection-end-line="225" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1639,7 +1660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="323" column="28" lean-forward="false" selection-start-line="323" selection-start-column="28" selection-end-line="323" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1647,25 +1667,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="26" column="96" lean-forward="false" selection-start-line="26" selection-start-column="96" selection-end-line="26" selection-end-column="96" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestImgCompress.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="88" column="50" lean-forward="true" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
+        <state relative-caret-position="396">
+          <caret line="72" column="25" lean-forward="false" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/github/flyinghe/res/ex_hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="477" column="0" lean-forward="true" selection-start-line="477" selection-start-column="0" selection-end-line="477" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/CommonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="157" column="31" lean-forward="true" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="265" column="16" lean-forward="false" selection-start-line="265" selection-start-column="16" selection-end-line="265" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#12039#12040#0" expanded="true" />
+            <element signature="e#12095#12096#0" expanded="true" />
+            <element signature="e#12421#12422#0" expanded="true" />
+            <element signature="e#12455#12456#0" expanded="true" />
+            <element signature="e#12565#12566#0" expanded="true" />
+            <element signature="e#12611#12612#0" expanded="true" />
+            <element signature="e#12686#12687#0" expanded="true" />
+            <element signature="e#12719#12720#0" expanded="true" />
+            <element signature="e#12821#12822#0" expanded="true" />
+            <element signature="e#12865#12866#0" expanded="true" />
+            <element signature="e#12939#12940#0" expanded="true" />
+            <element signature="e#12971#12972#0" expanded="true" />
+            <element signature="e#13141#13142#0" expanded="true" />
+            <element signature="e#13183#13184#0" expanded="true" />
+            <element signature="e#13373#13374#0" expanded="true" />
+            <element signature="e#13427#13428#0" expanded="true" />
+            <element signature="e#13578#13579#0" expanded="true" />
+            <element signature="e#13627#13628#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestExcelUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="28" column="57" lean-forward="true" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
