@@ -1,5 +1,6 @@
 package com.github.flyinghe.tools;
 
+import com.github.flyinghe.exception.WriteExcelException;
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
@@ -197,17 +198,17 @@ public class WriteExcelUtils {
      * @param properties 指定写入的bean的属性
      * @param titles     指定写入的标题
      * @param dateFormat 日期格式
-     * @throws Exception
+     * @throws WriteExcelException
      */
     public static <T> void writeWorkBook(File file, int excelType, List<T> beans, List<String> properties,
-                                         List<String> titles, String dateFormat) throws Exception {
+                                         List<String> titles, String dateFormat) throws WriteExcelException {
         Workbook workbook = null;
         if (XLSX == excelType) {
             workbook = new XSSFWorkbook();
         } else if (XLS == excelType) {
             workbook = new HSSFWorkbook();
         } else {
-            throw new Exception("excelType参数错误");
+            throw new WriteExcelException("excelType参数错误");
         }
         WriteExcelUtils.writeWorkBook(workbook, beans.size(), beans, properties, titles, dateFormat);
         OutputStream os = null;
@@ -215,7 +216,7 @@ public class WriteExcelUtils {
             os = new FileOutputStream(file);
             WriteExcelUtils.writeWorkBookToExcel(workbook, os);
         } catch (Exception e) {
-            throw e;
+            throw new WriteExcelException(e.getMessage());
         } finally {
             CommonUtils.closeIOStream(null, os);
         }
@@ -228,11 +229,12 @@ public class WriteExcelUtils {
      * @param excelType  输出Excel文件类型{@link #XLSX}或者{@link #XLS},此类型必须与file文件名后缀匹配
      * @param beans      指定写入的Beans(或者泛型为Map)
      * @param dateFormat 日期格式
-     * @throws Exception
+     * @throws WriteExcelException
      */
-    public static <T> void writeWorkBook(File file, int excelType, List<T> beans, String dateFormat) throws Exception {
+    public static <T> void writeWorkBook(File file, int excelType, List<T> beans, String dateFormat)
+            throws WriteExcelException {
         if (beans == null || beans.isEmpty()) {
-            throw new Exception("beans参数不能为空");
+            throw new WriteExcelException("beans参数不能为空");
         }
         Map<String, Object> map = null;
         if (beans.get(0) instanceof Map) {
@@ -241,7 +243,7 @@ public class WriteExcelUtils {
             map = CommonUtils.toMap(beans.get(0));
         }
         if (map == null) {
-            throw new Exception("获取bean属性失败");
+            throw new WriteExcelException("获取bean属性失败");
         }
         List<String> properties = new ArrayList<String>();
         properties.addAll(map.keySet());
@@ -255,9 +257,9 @@ public class WriteExcelUtils {
      * @param file      指定Excel输出文件
      * @param excelType 输出Excel文件类型{@link #XLSX}或者{@link #XLS},此类型必须与file文件名后缀匹配
      * @param beans     指定写入的Beans(或者泛型为Map)
-     * @throws Exception
+     * @throws WriteExcelException
      */
-    public static <T> void writeWorkBook(File file, int excelType, List<T> beans) throws Exception {
+    public static <T> void writeWorkBook(File file, int excelType, List<T> beans) throws WriteExcelException {
         WriteExcelUtils.writeWorkBook(file, excelType, beans, null);
     }
 
@@ -269,20 +271,21 @@ public class WriteExcelUtils {
      * @param excelType 输出Excel文件类型{@link #XLSX}或者{@link #XLS},此类型必须与file文件名后缀匹配
      * @param beans     指定写入的Beans(或者泛型为Map)
      * @param count     指定每一个Sheet写入几个Bean
-     * @throws Exception
+     * @throws WriteExcelException
      */
-    public static <T> void writeWorkBook(File file, int excelType, List<T> beans, int count) throws Exception {
+    public static <T> void writeWorkBook(File file, int excelType, List<T> beans, int count)
+            throws WriteExcelException {
         Workbook workbook = null;
         if (XLSX == excelType) {
             workbook = new XSSFWorkbook();
         } else if (XLS == excelType) {
             workbook = new HSSFWorkbook();
         } else {
-            throw new Exception("excelType参数错误");
+            throw new WriteExcelException("excelType参数错误");
         }
 
         if (beans == null || beans.isEmpty()) {
-            throw new Exception("beans参数不能为空");
+            throw new WriteExcelException("beans参数不能为空");
         }
         Map<String, Object> map = null;
         if (beans.get(0) instanceof Map) {
@@ -291,7 +294,7 @@ public class WriteExcelUtils {
             map = CommonUtils.toMap(beans.get(0));
         }
         if (map == null) {
-            throw new Exception("获取bean属性失败");
+            throw new WriteExcelException("获取bean属性失败");
         }
         List<String> properties = new ArrayList<String>();
         properties.addAll(map.keySet());
@@ -301,7 +304,7 @@ public class WriteExcelUtils {
             os = new FileOutputStream(file);
             WriteExcelUtils.writeWorkBookToExcel(workbook, os);
         } catch (Exception e) {
-            throw e;
+            throw new WriteExcelException(e.getMessage());
         } finally {
             CommonUtils.closeIOStream(null, os);
         }
@@ -349,10 +352,14 @@ public class WriteExcelUtils {
      *
      * @param workbook 指定工作簿
      * @param os       指定输出流,需要手动关闭
-     * @throws IOException 出现I/O异常抛出
+     * @throws WriteExcelException 出现I/O异常抛出
      */
-    public static void writeWorkBookToExcel(Workbook workbook, OutputStream os) throws IOException {
-        workbook.write(os);
+    public static void writeWorkBookToExcel(Workbook workbook, OutputStream os) throws WriteExcelException {
+        try {
+            workbook.write(os);
+        } catch (IOException e) {
+            throw new WriteExcelException(e.getMessage());
+        }
     }
 
 }

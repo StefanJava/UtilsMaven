@@ -1,5 +1,7 @@
 package com.github.flyinghe.tools;
 
+import com.github.flyinghe.exception.WriteExcelException;
+import com.github.flyinghe.exception.WriteExcelRuntimeException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
@@ -215,19 +217,19 @@ public class XLSXWriter<T> {
                       String dateFormat, boolean isCompressTempFiles, List<String> titles, boolean isWriteTitle) {
         if (limit > ROW_MOST) {
             //每一页行数不能超过最大值
-            throw new RuntimeException("limit have to <= " + ROW_MOST);
+            throw new WriteExcelRuntimeException("limit have to <= " + ROW_MOST);
         }
         if (properties != null && properties.size() > COLUMN_MOST) {
             //列数不能超过最大值
-            throw new RuntimeException("properties.size() have to <= " + COLUMN_MOST);
+            throw new WriteExcelRuntimeException("properties.size() have to <= " + COLUMN_MOST);
         }
         if (isWriteTitle && titles != null && properties == null) {
             //若用户打开了标题写入总开关且指定了titles,则必须指定properties
-            throw new RuntimeException("properties can't be null");
+            throw new WriteExcelRuntimeException("properties can't be null");
         }
         if (isWriteTitle && titles != null && titles.size() > COLUMN_MOST) {
             //列数不能超过最大值
-            throw new RuntimeException("titles.size() have to <= " + COLUMN_MOST);
+            throw new WriteExcelRuntimeException("titles.size() have to <= " + COLUMN_MOST);
         }
         this.file = file;
         this.limit = limit;
@@ -555,7 +557,7 @@ public class XLSXWriter<T> {
             }
             if (this.properties.size() > COLUMN_MOST) {
                 //列数不能超过最大值
-                throw new RuntimeException("properties.size() have to <= " + COLUMN_MOST);
+                throw new WriteExcelRuntimeException("properties.size() have to <= " + COLUMN_MOST);
             }
         }
         if (this.isWriteTitle && (this.titles == null || this.titles.isEmpty())) {
@@ -606,10 +608,10 @@ public class XLSXWriter<T> {
             mapBean = CommonUtils.toMap(data);
         }
         if (mapBean == null) {
-            throw new RuntimeException("Bean转换为Map时发生错误");
+            throw new WriteExcelRuntimeException("Bean转换为Map时发生错误");
         }
         if (this.properties == null || this.properties.isEmpty()) {
-            throw new RuntimeException("properties属性不能为空");
+            throw new WriteExcelRuntimeException("properties属性不能为空");
         }
         if (!this.isSkipBlankRow) {
             //未开启跳过空行设置,即需要写入空行
@@ -678,7 +680,7 @@ public class XLSXWriter<T> {
                 this.currentSheetPO.flushRows();
             }
         } catch (Exception e) {
-            throw new RuntimeException("Flush Error");
+            throw new WriteExcelRuntimeException("Flush Error");
         }
     }
 
@@ -718,16 +720,16 @@ public class XLSXWriter<T> {
      * 结束Excel文档写入工作(同时将缓存数据全部写入指定的{@link #file}文件中)
      *
      * @return 缓存全部写入指定的 {@link #file}文件后会尝试删除缓存文件,删除成功返回true,失败返回false
-     * @throws IOException 写入过程中发生IO异常
+     * @throws WriteExcelException 写入过程中发生IO异常
      */
-    public boolean endWrite() throws IOException {
+    public boolean endWrite() throws WriteExcelException {
         FileOutputStream out = null;
         boolean flag = true;
         try {
             out = new FileOutputStream(this.file);
             this.workbook.write(out);
         } catch (IOException e) {
-            throw e;
+            throw new WriteExcelException(e.getMessage());
         } finally {
             CommonUtils.closeIOStream(null, out);
             //删除用于缓存的临时文件

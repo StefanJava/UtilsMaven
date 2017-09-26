@@ -2,6 +2,8 @@ package com.github.flyinghe.tools;
 
 import com.github.flyinghe.depdcy.ExcelHandler;
 import com.github.flyinghe.depdcy.FormatTrackingHSSFListenerPlus;
+import com.github.flyinghe.exception.ReadExcelException;
+import com.github.flyinghe.exception.ReadExcelRuntimeException;
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.poi.hssf.eventusermodel.*;
 import org.apache.poi.hssf.eventusermodel.dummyrecord.LastCellOfRowDummyRecord;
@@ -12,6 +14,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.ParseException;
@@ -187,7 +190,7 @@ public class XLSReader implements HSSFListener {
      * CSV as the file is processed.
      * 开始解析Excel文档
      */
-    public void process() throws Exception {
+    public void process() throws ReadExcelException {
         MissingRecordAwareHSSFListener listener = new MissingRecordAwareHSSFListener(this);
         formatListener = new FormatTrackingHSSFListenerPlus(listener);
 
@@ -201,7 +204,11 @@ public class XLSReader implements HSSFListener {
             request.addListenerForAllRecords(workbookBuildingListener);
         }
 
-        factory.processWorkbookEvents(request, fs);
+        try {
+            factory.processWorkbookEvents(request, fs);
+        } catch (IOException e) {
+            throw new ReadExcelException(e.getMessage());
+        }
         //解析完后，判断用户是否设置了limit，若设置了执行以下操作
         if (this.limit > 0) {
             if (!this.datas.isEmpty()) {
@@ -460,7 +467,7 @@ public class XLSReader implements HSSFListener {
                                             this.realRowInExcel, this.allSheetInExcel, this.titles, this.columns,
                                             this.datas);
                         } catch (Exception e) {
-                            throw new RuntimeException("SAX parser appears to be broken - " + e.getMessage());
+                            throw new ReadExcelRuntimeException("SAX parser appears to be broken - " + e.getMessage());
                         }
                     }
                     //超过限制则清空
@@ -476,9 +483,9 @@ public class XLSReader implements HSSFListener {
      *
      * @param file Excel文件
      * @return 返回所有封装好的beanMap数据
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static List<Map<String, Object>> readExcelToMapList(File file) throws Exception {
+    public static List<Map<String, Object>> readExcelToMapList(File file) throws ReadExcelException {
         return XLSReader.readExcelToMapList(file, null);
     }
 
@@ -488,9 +495,9 @@ public class XLSReader implements HSSFListener {
      * @param file  Excel文件
      * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
      * @return 返回所有封装好的beanMap数据
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static List<Map<String, Object>> readExcelToMapList(File file, Integer scale) throws Exception {
+    public static List<Map<String, Object>> readExcelToMapList(File file, Integer scale) throws ReadExcelException {
         return XLSReader.readExcel(file, scale).getDatas();
     }
 
@@ -500,9 +507,9 @@ public class XLSReader implements HSSFListener {
      * @param file  Excel文件
      * @param clazz 指定封装类型
      * @return 返回所有封装好的javabean数据, 没有则返回空List
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static <T> List<T> readExcelToBeans(File file, Class<T> clazz) throws Exception {
+    public static <T> List<T> readExcelToBeans(File file, Class<T> clazz) throws ReadExcelException {
         return XLSReader.readExcelToBeans(file, null, clazz);
     }
 
@@ -513,9 +520,9 @@ public class XLSReader implements HSSFListener {
      * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
      * @param clazz 指定封装类型
      * @return 返回所有封装好的javabean数据, 没有则返回空List
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static <T> List<T> readExcelToBeans(File file, Integer scale, Class<T> clazz) throws Exception {
+    public static <T> List<T> readExcelToBeans(File file, Integer scale, Class<T> clazz) throws ReadExcelException {
         List<Map<String, Object>> mapList = XLSReader.readExcelToMapList(file, scale);
         List<T> beans = new ArrayList<T>();
         for (Map<String, Object> map : mapList) {
@@ -533,9 +540,9 @@ public class XLSReader implements HSSFListener {
      *
      * @param file Excel文件
      * @return 返回 {@link XLSReader}对象，你可以通过此对象获取你需要的数据
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static XLSReader readExcel(File file) throws Exception {
+    public static XLSReader readExcel(File file) throws ReadExcelException {
         return XLSReader.readExcel(file, null);
     }
 
@@ -546,9 +553,9 @@ public class XLSReader implements HSSFListener {
      * @param file  Excel文件
      * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
      * @return 返回 {@link XLSReader}对象，你可以通过此对象获取你需要的数据
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static XLSReader readExcel(File file, Integer scale) throws Exception {
+    public static XLSReader readExcel(File file, Integer scale) throws ReadExcelException {
         POIFSFileSystem fs = null;
         XLSReader reader = null;
         try {
@@ -556,10 +563,14 @@ public class XLSReader implements HSSFListener {
             reader = new XLSReader(fs, scale);
             reader.process();
         } catch (Exception e) {
-            throw e;
+            throw new ReadExcelException(e.getMessage());
         } finally {
             if (fs != null) {
-                fs.close();
+                try {
+                    fs.close();
+                } catch (IOException e) {
+                    throw new ReadExcelException(e.getMessage());
+                }
             }
         }
         return reader;
@@ -574,10 +585,10 @@ public class XLSReader implements HSSFListener {
      *                 若为null则表示不执行回调函数。
      *                 注意：在{@link #datas}未达到指定限制而文件数据已经完全读取完毕的情况下也会调用回调函数(若有回调函数),
      *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} &gt;0)。
-     * @throws Exception
+     * @throws ReadExcelException
      */
     public static void readExcel(File file, int limit, ExcelHandler callback)
-            throws Exception {
+            throws ReadExcelException {
         XLSReader.readExcel(file, null, limit, callback);
     }
 
@@ -591,10 +602,10 @@ public class XLSReader implements HSSFListener {
      *                 若为null则表示不执行回调函数。
      *                 注意：在{@link #datas}未达到指定限制而文件数据已经完全读取完毕的情况下也会调用回调函数(若有回调函数),
      *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} &gt;0)。
-     * @throws Exception
+     * @throws ReadExcelException
      */
     public static void readExcel(File file, Integer scale, int limit, ExcelHandler callback)
-            throws Exception {
+            throws ReadExcelException {
         POIFSFileSystem fs = null;
         XLSReader reader = null;
         try {
@@ -602,10 +613,14 @@ public class XLSReader implements HSSFListener {
             reader = new XLSReader(fs, scale, limit, callback);
             reader.process();
         } catch (Exception e) {
-            throw e;
+            throw new ReadExcelException(e.getMessage());
         } finally {
             if (fs != null) {
-                fs.close();
+                try {
+                    fs.close();
+                } catch (IOException e) {
+                    throw new ReadExcelException(e.getMessage());
+                }
             }
         }
     }

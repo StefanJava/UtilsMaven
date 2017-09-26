@@ -1,5 +1,6 @@
 package com.github.flyinghe.depdcy;
 
+import com.github.flyinghe.exception.ReadExcelException;
 import com.github.flyinghe.tools.XLSReader;
 import com.github.flyinghe.tools.XLSXReader;
 
@@ -28,6 +29,7 @@ public interface ExcelHandler {
      *                            注意：若没有设置limit(即limit &lt;=0的情况下)，不会调用回调函数，
      *                            此时你应该使用类似于{@link XLSXReader#readExcelToMapList(File)}等等
      *                            不需要提供回调函数的静态函数来做处理
+     * @throws ReadExcelException
      * @see XLSReader#readExcelToMapList(File)
      * @see XLSReader#readExcelToMapList(File, Integer)
      * @see XLSReader#readExcel(File)
@@ -35,5 +37,5 @@ public interface ExcelHandler {
      */
     public void callback(int currentRowInSheet, int currentSheetInExcel, int realRowInSheet, int realRowInExcel,
                          int allSheetInExcel, List<String> titles, List<String> columns,
-                         List<Map<String, Object>> datas) throws Exception;
+                         List<Map<String, Object>> datas) throws ReadExcelException;
 }

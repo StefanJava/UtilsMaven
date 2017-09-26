@@ -1,5 +1,6 @@
 package com.github.flyinghe.tools;
 
+import com.github.flyinghe.exception.ReadExcelException;
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.poi.ss.usermodel.*;
 
@@ -66,13 +67,13 @@ public class ReadExcelUtils {
      *
      * @param sheet 指定Sheet页
      * @return 返回List
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static List<String> getColumnOfSheet(Sheet sheet) throws Exception {
+    public static List<String> getColumnOfSheet(Sheet sheet) throws ReadExcelException {
         // 获取列名
         Row row = sheet.getRow(1);
         if (row == null) {
-            throw new Exception("The Column name is invalid！");
+            throw new ReadExcelException("The Column name is invalid！");
         }
         List<String> columnList = new ArrayList<String>();
         // 遍历列名并存入List中
@@ -90,9 +91,9 @@ public class ReadExcelUtils {
      *
      * @param sheet 指定Sheet页
      * @return 无结果返回空List
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static List<Map<String, Object>> handleSheetToMapList(Sheet sheet) throws Exception {
+    public static List<Map<String, Object>> handleSheetToMapList(Sheet sheet) throws ReadExcelException {
         List<Map<String, Object>> listMap = new ArrayList<Map<String, Object>>();
         // 得到Sheet里的列名
         List<String> columnList = ReadExcelUtils.getColumnOfSheet(sheet);
@@ -128,9 +129,9 @@ public class ReadExcelUtils {
      *
      * @param workbook 指定WorkBook
      * @return 无结果返回空List
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static List<Map<String, Object>> handleWorkBookToMapList(Workbook workbook) throws Exception {
+    public static List<Map<String, Object>> handleWorkBookToMapList(Workbook workbook) throws ReadExcelException {
         List<Map<String, Object>> listMap = new ArrayList<Map<String, Object>>();
         // 遍历WorkBook所有Sheet
         for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
@@ -148,13 +149,18 @@ public class ReadExcelUtils {
      *
      * @param file Excel文件
      * @return 无结果返回空List
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static List<Map<String, Object>> handleWorkBookToMapList(File file) throws Exception {
-        Workbook workbook = WorkbookFactory.create(file);
-        List<Map<String, Object>> listMap = ReadExcelUtils.handleWorkBookToMapList(workbook);
-        if (workbook != null) {
-            workbook.close();
+    public static List<Map<String, Object>> handleWorkBookToMapList(File file) throws ReadExcelException {
+        List<Map<String, Object>> listMap = null;
+        try {
+            Workbook workbook = WorkbookFactory.create(file);
+            listMap = ReadExcelUtils.handleWorkBookToMapList(workbook);
+            if (workbook != null) {
+                workbook.close();
+            }
+        } catch (Exception e) {
+            throw new ReadExcelException(e.getMessage());
         }
         return listMap;
     }
@@ -165,9 +171,9 @@ public class ReadExcelUtils {
      * @param clazz    指定封装类型
      * @param workbook
      * @return 无结果返回空List
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static <T> List<T> handleWorkBookToBeans(Class<T> clazz, Workbook workbook) throws Exception {
+    public static <T> List<T> handleWorkBookToBeans(Class<T> clazz, Workbook workbook) throws ReadExcelException {
         List<Map<String, Object>> listMap = ReadExcelUtils.handleWorkBookToMapList(workbook);
         List<T> beans = new ArrayList<T>();
         for (Map<String, Object> map : listMap) {
@@ -186,13 +192,18 @@ public class ReadExcelUtils {
      * @param clazz 指定封装类型
      * @param file  指定Excel文件
      * @return 无结果返回空List
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static <T> List<T> handleWorkBookToBeans(Class<T> clazz, File file) throws Exception {
-        Workbook workbook = WorkbookFactory.create(file);
-        List<T> beans = ReadExcelUtils.handleWorkBookToBeans(clazz, workbook);
-        if (workbook != null) {
-            workbook.close();
+    public static <T> List<T> handleWorkBookToBeans(Class<T> clazz, File file) throws ReadExcelException {
+        List<T> beans = null;
+        try {
+            Workbook workbook = WorkbookFactory.create(file);
+            beans = ReadExcelUtils.handleWorkBookToBeans(clazz, workbook);
+            if (workbook != null) {
+                workbook.close();
+            }
+        } catch (Exception e) {
+            throw new ReadExcelException(e.getMessage());
         }
         return beans;
     }

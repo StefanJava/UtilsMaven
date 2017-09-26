@@ -3,8 +3,9 @@ package com.github.flyinghe.tools;
 import com.github.flyinghe.depdcy.ExcelHandler;
 import com.github.flyinghe.depdcy.XSSFSheetXMLHandlerPlus;
 import com.github.flyinghe.depdcy.XSSFSheetXMLHandlerPlus.SheetContentsHandler;
+import com.github.flyinghe.exception.ReadExcelException;
+import com.github.flyinghe.exception.ReadExcelRuntimeException;
 import org.apache.commons.lang.time.DateUtils;
-import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.openxml4j.opc.PackageAccess;
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -17,7 +18,6 @@ import org.apache.poi.xssf.model.StylesTable;
 import org.apache.poi.xssf.usermodel.XSSFComment;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -182,14 +182,13 @@ public class XLSXReader implements SheetContentsHandler {
      * @param strings
      * @param sheetHandler
      * @param sheetInputStream 指定sheet流
-     * @throws IOException
-     * @throws SAXException
+     * @throws ReadExcelException
      */
     public void processSheet(
             StylesTable styles,
             ReadOnlySharedStringsTable strings,
             SheetContentsHandler sheetHandler,
-            InputStream sheetInputStream) throws IOException, SAXException {
+            InputStream sheetInputStream) throws ReadExcelException {
 
         DataFormatter formatter = new DataFormatter();
         InputSource sheetSource = new InputSource(sheetInputStream);
@@ -201,39 +200,43 @@ public class XLSXReader implements SheetContentsHandler {
             //开始解析
             sheetParser.parse(sheetSource);
         } catch (ParserConfigurationException e) {
-            throw new RuntimeException("SAX parser appears to be broken - " + e.getMessage());
+            throw new ReadExcelException("SAX parser appears to be broken - " + e.getMessage());
+        } catch (Exception e) {
+            throw new ReadExcelException(e.getMessage());
         }
     }
 
     /**
      * 开始解析Excel文档
      *
-     * @throws IOException
-     * @throws OpenXML4JException
-     * @throws SAXException
+     * @throws ReadExcelException
      */
-    public void process() throws Exception {
-        ReadOnlySharedStringsTable strings = new ReadOnlySharedStringsTable(this.xlsxPackage);
-        XSSFReader xssfReader = new XSSFReader(this.xlsxPackage);
-        StylesTable styles = xssfReader.getStylesTable();
-        XSSFReader.SheetIterator iter = (XSSFReader.SheetIterator) xssfReader.getSheetsData();
-        while (iter.hasNext()) {
-            //初始化数据
-            this.initDataPerSheet();
-            InputStream stream = iter.next();
-            this.processSheet(styles, strings, this, stream);
-            stream.close();
-        }
-        //解析完后，判断用户是否设置了limit，若设置了执行以下操作
-        if (this.limit > 0) {
-            if (!this.datas.isEmpty()) {
-                if (this.callback != null) {
-                    //若数据不为空且回调函数被设置，则调用回调函数
-                    this.callback.callback(this.currentRowInSheet, this.currentSheetInExcel, this.realRowInSheet,
-                            this.realRowInExcel, this.allSheetInExcel, this.titles, this.columns, this.datas);
-                }
-                this.datas.clear();
+    public void process() throws ReadExcelException {
+        try {
+            ReadOnlySharedStringsTable strings = new ReadOnlySharedStringsTable(this.xlsxPackage);
+            XSSFReader xssfReader = new XSSFReader(this.xlsxPackage);
+            StylesTable styles = xssfReader.getStylesTable();
+            XSSFReader.SheetIterator iter = (XSSFReader.SheetIterator) xssfReader.getSheetsData();
+            while (iter.hasNext()) {
+                //初始化数据
+                this.initDataPerSheet();
+                InputStream stream = iter.next();
+                this.processSheet(styles, strings, this, stream);
+                stream.close();
             }
+            //解析完后，判断用户是否设置了limit，若设置了执行以下操作
+            if (this.limit > 0) {
+                if (!this.datas.isEmpty()) {
+                    if (this.callback != null) {
+                        //若数据不为空且回调函数被设置，则调用回调函数
+                        this.callback.callback(this.currentRowInSheet, this.currentSheetInExcel, this.realRowInSheet,
+                                this.realRowInExcel, this.allSheetInExcel, this.titles, this.columns, this.datas);
+                    }
+                    this.datas.clear();
+                }
+            }
+        } catch (Exception e) {
+            throw new ReadExcelException(e.getMessage());
         }
     }
 
@@ -309,7 +312,7 @@ public class XLSXReader implements SheetContentsHandler {
                         this.callback.callback(this.currentRowInSheet, this.currentSheetInExcel, this.realRowInSheet,
                                 this.realRowInExcel, this.allSheetInExcel, this.titles, this.columns, this.datas);
                     } catch (Exception e) {
-                        throw new RuntimeException("SAX parser appears to be broken - " + e.getMessage());
+                        throw new ReadExcelRuntimeException("SAX parser appears to be broken - " + e.getMessage());
                     }
                 }
                 //超过限制则清空
@@ -368,9 +371,9 @@ public class XLSXReader implements SheetContentsHandler {
      *
      * @param file Excel文件
      * @return 返回所有封装好的beanMap数据
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static List<Map<String, Object>> readExcelToMapList(File file) throws Exception {
+    public static List<Map<String, Object>> readExcelToMapList(File file) throws ReadExcelException {
         return XLSXReader.readExcelToMapList(file, null);
     }
 
@@ -380,9 +383,9 @@ public class XLSXReader implements SheetContentsHandler {
      * @param file  Excel文件
      * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
      * @return 返回所有封装好的beanMap数据
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static List<Map<String, Object>> readExcelToMapList(File file, Integer scale) throws Exception {
+    public static List<Map<String, Object>> readExcelToMapList(File file, Integer scale) throws ReadExcelException {
         return XLSXReader.readExcel(file, scale).getDatas();
     }
 
@@ -392,9 +395,9 @@ public class XLSXReader implements SheetContentsHandler {
      * @param file  Excel文件
      * @param clazz 指定封装类型
      * @return 返回所有封装好的javabean数据, 没有则返回空List
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static <T> List<T> readExcelToBeans(File file, Class<T> clazz) throws Exception {
+    public static <T> List<T> readExcelToBeans(File file, Class<T> clazz) throws ReadExcelException {
         return XLSXReader.readExcelToBeans(file, null, clazz);
     }
 
@@ -405,9 +408,9 @@ public class XLSXReader implements SheetContentsHandler {
      * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
      * @param clazz 指定封装类型
      * @return 返回所有封装好的javabean数据, 没有则返回空List
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static <T> List<T> readExcelToBeans(File file, Integer scale, Class<T> clazz) throws Exception {
+    public static <T> List<T> readExcelToBeans(File file, Integer scale, Class<T> clazz) throws ReadExcelException {
         List<Map<String, Object>> mapList = XLSXReader.readExcelToMapList(file, scale);
         List<T> beans = new ArrayList<T>();
         for (Map<String, Object> map : mapList) {
@@ -425,9 +428,9 @@ public class XLSXReader implements SheetContentsHandler {
      *
      * @param file Excel文件
      * @return 返回 {@link XLSXReader}对象，你可以通过此对象获取你需要的数据
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static XLSXReader readExcel(File file) throws Exception {
+    public static XLSXReader readExcel(File file) throws ReadExcelException {
         return XLSXReader.readExcel(file, null);
     }
 
@@ -438,9 +441,9 @@ public class XLSXReader implements SheetContentsHandler {
      * @param file  Excel文件
      * @param scale 指定若数值中含有小数则保留几位小数，四舍五入,null或者&lt;=0表示不四舍五入
      * @return 返回 {@link XLSXReader}对象，你可以通过此对象获取你需要的数据
-     * @throws Exception
+     * @throws ReadExcelException
      */
-    public static XLSXReader readExcel(File file, Integer scale) throws Exception {
+    public static XLSXReader readExcel(File file, Integer scale) throws ReadExcelException {
         OPCPackage p = null;
         XLSXReader reader = null;
         try {
@@ -448,10 +451,14 @@ public class XLSXReader implements SheetContentsHandler {
             reader = new XLSXReader(p, scale);
             reader.process();
         } catch (Exception e) {
-            throw e;
+            throw new ReadExcelException(e.getMessage());
         } finally {
             if (p != null) {
-                p.close();
+                try {
+                    p.close();
+                } catch (IOException e) {
+                    throw new ReadExcelException(e.getMessage());
+                }
             }
         }
         return reader;
@@ -466,10 +473,10 @@ public class XLSXReader implements SheetContentsHandler {
      *                 若为null则表示不执行回调函数。
      *                 注意：在{@link #datas}未达到指定限制而文件数据已经完全读取完毕的情况下也会调用回调函数(若有回调函数),
      *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} &gt;0)。
-     * @throws Exception
+     * @throws ReadExcelException
      */
     public static void readExcel(File file, int limit, ExcelHandler callback)
-            throws Exception {
+            throws ReadExcelException {
         XLSXReader.readExcel(file, null, limit, callback);
     }
 
@@ -483,10 +490,10 @@ public class XLSXReader implements SheetContentsHandler {
      *                 若为null则表示不执行回调函数。
      *                 注意：在{@link #datas}未达到指定限制而文件数据已经完全读取完毕的情况下也会调用回调函数(若有回调函数),
      *                 回调函数在datas被清空之前调用(若需要回调则必须启用限制,即{@link #limit} &gt;0)。
-     * @throws Exception
+     * @throws ReadExcelException
      */
     public static void readExcel(File file, Integer scale, int limit, ExcelHandler callback)
-            throws Exception {
+            throws ReadExcelException {
         OPCPackage p = null;
         XLSXReader reader = null;
         try {
@@ -494,10 +501,14 @@ public class XLSXReader implements SheetContentsHandler {
             reader = new XLSXReader(p, scale, limit, callback);
             reader.process();
         } catch (Exception e) {
-            throw e;
+            throw new ReadExcelException(e.getMessage());
         } finally {
             if (p != null) {
-                p.close();
+                try {
+                    p.close();
+                } catch (IOException e) {
+                    throw new ReadExcelException(e.getMessage());
+                }
             }
         }
     }

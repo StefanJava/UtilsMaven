@@ -5,7 +5,16 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/github/flyinghe/utlils/VerifyCodeUtils.java" />
     </list>
     <list default="true" id="fffe1b8e-c1b4-4fd1-974a-7dee2918c2dc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/ReadExcelException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/ReadExcelRuntimeException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/WriteExcelException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/WriteExcelRuntimeException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/depdcy/ExcelHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/depdcy/ExcelHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/ReadExcelUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/ReadExcelUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/WriteExcelUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/WriteExcelUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSReader.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXReader.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXReader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" />
     </list>
     <ignored path="UtilsMaven.iws" />
@@ -39,7 +48,7 @@
     <favorites_list name="UtilsMaven" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -59,6 +68,7 @@
       <find>Random</find>
       <find>r.nextInt</find>
       <find>fontBasicSize</find>
+      <find>exception</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -72,10 +82,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/at/flying/tools/CommonUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/at/flying/test/TestMybatis.java" />
-        <option value="$PROJECT_DIR$/src/test/java/at/flying/test/TestBeanToMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/at/flying/tools/AESUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/at/flying/test/TestImgCompress.java" />
         <option value="$PROJECT_DIR$/src/main/java/at/flying/tools/ImgUtils.java" />
@@ -88,7 +94,6 @@
         <option value="$PROJECT_DIR$/src/main/java/at/flying/tools/XLSXReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/at/flying/tools/WriteExcelUtils.java" />
         <option value="$PROJECT_DIR$/settings.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/depdcy/ExcelHandler.java" />
         <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/depdcy/XSSFSheetXMLHandlerPlus.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/depdcy/FormatTrackingHSSFListenerPlus.java" />
@@ -98,13 +103,10 @@
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/utlils/Example1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/depdcy/ExcelWriterHandler.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/utlils/Example.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSReader.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/domain/Student.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestExcelUtils.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/domain/User.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/CommonUtils.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestBeanToMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/AESUtil.java" />
@@ -115,13 +117,21 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/DOM4JTools.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/JDBCUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/PaymentUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/ReadExcelUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/WriteExcelUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/ImgUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/PageBean.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestImgCompress.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/flyinghe/utlils/VerifyCodeUtils.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/ReadExcelException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/WriteExcelException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/ReadExcelRuntimeException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/WriteExcelRuntimeException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/depdcy/ExcelHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/ReadExcelUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/WriteExcelUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java" />
       </list>
     </option>
@@ -169,8 +179,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="260" />
+    <option name="y" value="282" />
     <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
@@ -184,15 +194,13 @@
       <hideEmptyPackages ProjectPane="false" />
       <abbreviatePackageNames />
       <autoscrollToSource />
-      <autoscrollFromSource ProjectPane="true" />
+      <autoscrollFromSource ProjectPane="false" />
       <sortByType />
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,91 +208,13 @@
               <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
               <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="flyinghe" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="flyinghe" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="flyinghe" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UtilsMaven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UtilsMaven" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="flyinghe" type="462c0819:PsiDirectoryNode" />
-              <item name="utlils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,7 +225,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15527344" />
     <property name="project.structure.side.proportion" value="0.24276169" />
-    <property name="SearchEverywhereHistoryKey" value="Test&#9;PSI&#9;JAVA://com.github.flyinghe.test.TestBeanToMap#test1&#10;ImgU&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/ImgUtils.java&#10;pom.x&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/pom.xml&#10;Common&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/CommonUtils.java&#10;Comm&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/CommonUtils.java&#10;Ver&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java&#10;pom&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/pom.xml&#10;SXss&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi-ooxml/3.14/poi-ooxml-3.14-sources.jar!/org/apache/poi/xssf/streaming/SXSSFWorkbook.java&#10;org.apache.poi.xssf.streaming.SXSSFWorkbook&#9;PSI&#9;JAVA://org.apache.poi.xssf.streaming.SXSSFWorkbook&#10;FormatTrackingHSSFListener&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi/3.14/poi-3.14.jar!/org/apache/poi/hssf/eventusermodel/FormatTrackingHSSFListener.class&#10;XSSFSheetXMLHandler&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi-ooxml/3.14/poi-ooxml-3.14-sources.jar!/org/apache/poi/xssf/eventusermodel/XSSFSheetXMLHandler.java&#10;Email&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/Email.java&#10;XLs&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/XLSReader.java&#10;XL&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/XLSXReader.java&#10;Read&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/ReadExcelUtils.java&#10;set ba&#9;ACTION&#9;Images.SetBackgroundImage" />
+    <property name="SearchEverywhereHistoryKey" value="pom&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/pom.xml&#10;Test&#9;PSI&#9;JAVA://com.github.flyinghe.test.TestBeanToMap#test1&#10;ImgU&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/ImgUtils.java&#10;pom.x&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/pom.xml&#10;Common&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/CommonUtils.java&#10;Comm&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/CommonUtils.java&#10;Ver&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/VerificationCodeImage.java&#10;SXss&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi-ooxml/3.14/poi-ooxml-3.14-sources.jar!/org/apache/poi/xssf/streaming/SXSSFWorkbook.java&#10;org.apache.poi.xssf.streaming.SXSSFWorkbook&#9;PSI&#9;JAVA://org.apache.poi.xssf.streaming.SXSSFWorkbook&#10;FormatTrackingHSSFListener&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi/3.14/poi-3.14.jar!/org/apache/poi/hssf/eventusermodel/FormatTrackingHSSFListener.class&#10;XSSFSheetXMLHandler&#9;FILE&#9;jar://D:/OpenSource/Maven/repository/org/apache/poi/poi-ooxml/3.14/poi-ooxml-3.14-sources.jar!/org/apache/poi/xssf/eventusermodel/XSSFSheetXMLHandler.java&#10;Email&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/com/github/flyinghe/tools/Email.java&#10;XLs&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/XLSReader.java&#10;XL&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/XLSXReader.java&#10;Read&#9;FILE&#9;file://D:/WORKSPACE/intelljIdea/UtilsMaven/src/main/java/at/flying/tools/ReadExcelUtils.java&#10;set ba&#9;ACTION&#9;Images.SetBackgroundImage" />
     <property name="js-jscs-nodeInterpreter" value="D:\NodeJs\nodejs\node.exe" />
     <property name="nodejs_interpreter_path" value="D:/NodeJs/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -1096,7 +1026,9 @@
       <workItem from="1504773756358" duration="516000" />
       <workItem from="1504774839798" duration="3191000" />
       <workItem from="1505199495377" duration="800000" />
-      <workItem from="1505202767746" duration="700000" />
+      <workItem from="1505202767746" duration="730000" />
+      <workItem from="1505207827240" duration="222000" />
+      <workItem from="1506410824379" duration="2784000" />
     </task>
     <task id="LOCAL-00001" summary="修改了Group id">
       <created>1502849554877</created>
@@ -1189,7 +1121,21 @@
       <option name="project" value="LOCAL" />
       <updated>1504777174756</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Bug Fixed">
+      <created>1505205531296</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1505205531296</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Bug Fixed">
+      <created>1505208038836</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1505208038836</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1225,7 +1171,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59428000" />
+    <option name="totallyTimeSpent" value="62464000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1350,7 +1296,7 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java</url>
-          <line>468</line>
+          <line>470</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -1367,56 +1313,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/settings.xml" />
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2-sources.jar!/org/apache/commons/beanutils/PropertyUtilsBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="266" column="16" lean-forward="false" selection-start-line="266" selection-start-column="16" selection-end-line="266" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2-sources.jar!/org/apache/commons/beanutils/PropertyUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="244" column="53" lean-forward="false" selection-start-line="244" selection-start-column="53" selection-end-line="244" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/flyinghe/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2-sources.jar!/org/apache/commons/beanutils/BeanUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="427" column="23" lean-forward="false" selection-start-line="427" selection-start-column="23" selection-end-line="427" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="330" column="0" lean-forward="false" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/JDK/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="403" column="19" lean-forward="false" selection-start-line="403" selection-start-column="19" selection-end-line="403" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/JDK/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -1436,13 +1332,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="37" column="13" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/depdcy/ExcelHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1551,34 +1440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/ReadExcelUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1789">
-          <caret line="27" column="55" lean-forward="true" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/WriteExcelUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7515">
-          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11839">
-          <caret line="60" column="37" lean-forward="true" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-672">
-          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/JDK/src.zip!/com/sun/image/codec/jpeg/JPEGCodec.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3017">
@@ -1597,13 +1458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1695,42 +1549,156 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="157" column="31" lean-forward="true" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/JDK/src.zip!/java/io/IOException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="38" column="6" lean-forward="false" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/JDK/src.zip!/javax/xml/parsers/ParserConfigurationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/JDK/src.zip!/org/xml/sax/XMLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="398" column="16" lean-forward="false" selection-start-line="398" selection-start-column="16" selection-end-line="398" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/JDK/src.zip!/org/xml/sax/SAXException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="61" column="13" lean-forward="false" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/ReadExcelRuntimeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/WriteExcelException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="32" />
+          <folding>
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#257#258#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/WriteExcelRuntimeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="66" lean-forward="true" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+          <folding>
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#285#286#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#396#397#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12696">
+          <caret line="590" column="0" lean-forward="false" selection-start-line="590" selection-start-column="0" selection-end-line="590" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="448" column="13" lean-forward="true" selection-start-line="448" selection-start-column="13" selection-end-line="448" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/ReadExcelUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4393">
+          <caret line="201" column="35" lean-forward="true" selection-start-line="201" selection-start-column="35" selection-end-line="201" selection-end-column="35" />
+          <folding>
+            <element signature="e#3242#3263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/exception/ReadExcelException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestExcelUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/depdcy/ExcelHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/WriteExcelUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="360" column="58" lean-forward="false" selection-start-line="360" selection-start-column="58" selection-end-line="360" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/flyinghe/tools/XLSXWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="265" column="16" lean-forward="false" selection-start-line="265" selection-start-column="16" selection-end-line="265" selection-end-column="16" />
+        <state relative-caret-position="14973">
+          <caret line="702" column="5" lean-forward="true" selection-start-line="702" selection-start-column="5" selection-end-line="702" selection-end-column="5" />
           <folding>
-            <element signature="e#12039#12040#0" expanded="true" />
-            <element signature="e#12095#12096#0" expanded="true" />
-            <element signature="e#12421#12422#0" expanded="true" />
-            <element signature="e#12455#12456#0" expanded="true" />
-            <element signature="e#12565#12566#0" expanded="true" />
-            <element signature="e#12611#12612#0" expanded="true" />
-            <element signature="e#12686#12687#0" expanded="true" />
-            <element signature="e#12719#12720#0" expanded="true" />
-            <element signature="e#12821#12822#0" expanded="true" />
-            <element signature="e#12865#12866#0" expanded="true" />
-            <element signature="e#12939#12940#0" expanded="true" />
-            <element signature="e#12971#12972#0" expanded="true" />
-            <element signature="e#13141#13142#0" expanded="true" />
-            <element signature="e#13183#13184#0" expanded="true" />
-            <element signature="e#13373#13374#0" expanded="true" />
-            <element signature="e#13427#13428#0" expanded="true" />
-            <element signature="e#13578#13579#0" expanded="true" />
-            <element signature="e#13627#13628#0" expanded="true" />
+            <element signature="e#12202#12203#0" expanded="true" />
+            <element signature="e#12258#12259#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/flyinghe/test/TestExcelUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="28" column="57" lean-forward="true" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
