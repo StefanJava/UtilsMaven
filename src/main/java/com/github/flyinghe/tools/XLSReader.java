@@ -245,14 +245,13 @@ public class XLSReader implements HSSFListener {
             } else {
                 //判断是否数字
                 try {
-                    double dbl = Double.parseDouble(data);
+                    BigDecimal bd = new BigDecimal(data);
                     if (this.scale == null || this.scale <= 0) {
                         //不四舍五入，直接输出
                         value = data;
                     } else {
-                        BigDecimal bd = new BigDecimal(dbl);
                         value = bd.toString().contains(".") ? bd.setScale(this.scale, RoundingMode.HALF_UP).toString() :
-                                bd.toString();
+                                data;
                     }
                 } catch (NumberFormatException e1) {
                     //证明不是数字,直接输出

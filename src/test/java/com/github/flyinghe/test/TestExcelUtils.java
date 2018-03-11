@@ -17,7 +17,7 @@ import java.util.*;
  */
 public class TestExcelUtils {
     @Test
-    public void testBigData() throws IOException {
+    public void testBigData() throws Exception {
         List<String> props = CommonUtils
                 .arrayToList(new String[]{"name", "age", "price", "prices", "_byte", "_short", "email", "tel", "date"});
         List<String> titles =
@@ -83,7 +83,7 @@ public class TestExcelUtils {
     }
 
     @Test
-    public void test5() throws IOException {
+    public void test5() throws Exception {
         XLSXWriter<Student> xlsxWriter =
                 new XLSXWriter<>(new File("C:\\Users\\FlyingHe\\Desktop", "datas1.xlsx"),
                         3, null, true, null, null, true, null, true);

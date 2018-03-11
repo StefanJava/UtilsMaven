@@ -1,5 +1,6 @@
 package com.github.flyinghe.test;
 
+import com.github.flyinghe.exception.WriteExcelException;
 import com.github.flyinghe.tools.CommonUtils;
 import com.github.flyinghe.tools.WriteExcelUtils;
 import com.github.flyinghe.domain.Pet;
@@ -52,7 +53,7 @@ public class TestBeanToMap {
     }
 
     @Test
-    public void test2() throws IOException {
+    public void test2() throws IOException, WriteExcelException {
         User user = new User("小红", "女", new Date());
         user.setPet(new Pet("小猫", new Date()));
         user.setAge(90);
