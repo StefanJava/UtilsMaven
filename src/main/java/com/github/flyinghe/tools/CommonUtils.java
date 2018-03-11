@@ -3,6 +3,7 @@ package com.github.flyinghe.tools;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.MethodUtils;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.formula.functions.T;
 
 import javax.imageio.ImageIO;
@@ -239,5 +240,16 @@ public class CommonUtils {
             CommonUtils.closeIOStream(bais, null);
         }
         return image;
+    }
+
+    /**
+     * 判断一个请求是否是Ajax请求
+     *
+     * @param request Http请求
+     * @return 是Ajax请求返回true, 否则返回false
+     */
+    public static boolean isAjaxRequest(HttpServletRequest request) {
+        String ajaxHeader = request.getHeader("X-Requested-With");
+        return StringUtils.isNotBlank(ajaxHeader) && "XMLHttpRequest".equalsIgnoreCase(ajaxHeader);
     }
 }
